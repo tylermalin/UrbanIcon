@@ -182,6 +182,122 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
 
 .toast{position:absolute;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-size:12.5px;font-weight:700;padding:11px 17px;border-radius:22px;opacity:0;transition:.25s;z-index:90;white-space:nowrap;text-align:center;max-width:88%;}.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .foot{text-align:center;font-size:11px;color:var(--grey);margin:2px 0 30px;}.foot b{color:var(--ink);}
+.btn.cob{background:var(--cobalt);}
+.btn.jade{background:var(--jade);}
+
+/* orb / equalizer */
+.orb{width:110px;height:110px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(71,51,199,.10);flex-shrink:0;}
+.orb.big{width:150px;height:150px;box-shadow:0 0 0 14px rgba(71,51,199,.10),0 0 0 28px rgba(71,51,199,.05);}
+.eq{display:flex;align-items:center;gap:4px;height:40px;}
+.orb.big .eq{height:54px;gap:5px;}
+.eq i{width:5px;border-radius:3px;background:#fff;display:block;animation:eq 1s ease-in-out infinite;}
+.eq i:nth-child(1){height:40%;animation-delay:0s;}
+.eq i:nth-child(2){height:78%;animation-delay:.15s;}
+.eq i:nth-child(3){height:100%;animation-delay:.3s;}
+.eq i:nth-child(4){height:60%;animation-delay:.45s;}
+.eq i:nth-child(5){height:85%;animation-delay:.6s;}
+@keyframes eq{0%,100%{transform:scaleY(.5);}50%{transform:scaleY(1);}}
+
+/* KAI home */
+.khd{display:flex;align-items:center;gap:12px;padding:8px 0 14px;}
+.khd .menu{width:34px;height:34px;border-radius:12px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.khd .menu svg{width:18px;height:18px;stroke:var(--ink);}
+.khd .lab{flex:1;font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--indigo);text-transform:uppercase;}
+.khd .me2{width:34px;height:34px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;position:relative;flex-shrink:0;}
+.khd .me2 .on2{position:absolute;bottom:0;right:0;width:9px;height:9px;border-radius:50%;background:var(--jade);border:2px solid #fff;}
+.greet{display:flex;gap:14px;align-items:flex-start;margin:2px 0 14px;}
+.greet h3{font-size:24px;font-weight:900;}
+.greet p{font-size:13px;color:var(--grey);margin-top:3px;line-height:1.4;}
+.bubble{max-width:88%;padding:13px 15px;border-radius:18px;font-size:13.5px;line-height:1.45;margin:8px 0;}
+.bubble.ka{background:var(--grad);color:#fff;border-bottom-left-radius:5px;}
+.bubble.me{background:#fff;border:1px solid var(--line);margin-left:auto;border-bottom-right-radius:5px;font-weight:700;}
+
+/* My Day timeline */
+.daymsg{display:flex;gap:11px;background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:6px;}
+.daymsg .kk{width:30px;height:30px;border-radius:50%;background:var(--grad);color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.daymsg p{font-size:13px;line-height:1.45;}
+.tl{margin-top:12px;}
+.tlrow{display:grid;grid-template-columns:42px 20px 1fr;gap:8px;align-items:stretch;}
+.tltime{font-size:12px;font-weight:800;color:var(--grey);padding-top:14px;text-align:right;}
+.tlline{display:flex;flex-direction:column;align-items:center;padding-top:15px;}
+.tldot{width:14px;height:14px;border-radius:50%;border:3px solid var(--cobalt);background:#fff;flex-shrink:0;}
+.tldot.done{background:var(--jade);border-color:var(--jade);}
+.tldot.hold{border-color:var(--amber);}
+.tlbar{width:2px;flex:1;background:var(--line);margin-top:2px;min-height:20px;}
+.tlcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:8px;}
+.tlcard .tt{font-size:15px;font-weight:800;}
+.tlcard .ts{font-size:12px;color:var(--grey);margin-top:2px;}
+.tlbadge{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.5px;padding:4px 9px;border-radius:10px;margin-top:9px;text-transform:uppercase;}
+.tlbadge.done{background:var(--t-jade);color:var(--jade);}
+.tlbadge.booked{background:var(--t-cobalt);color:var(--cobalt);}
+.tlbadge.hold{background:var(--t-amber);color:var(--amber);}
+
+/* level tiers */
+.tier{border:1.5px solid var(--line);border-radius:20px;padding:18px;margin-top:14px;background:#fff;position:relative;cursor:pointer;}
+.tier.on{border-color:var(--indigo);box-shadow:0 8px 24px rgba(71,51,199,.12);}
+.tier .radio{position:absolute;top:18px;right:18px;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);}
+.tier.on .radio{border-color:var(--indigo);background:radial-gradient(circle,var(--indigo) 0 5px,#fff 6px);}
+.tier .tn{font-size:16px;font-weight:900;letter-spacing:.5px;display:flex;align-items:center;gap:9px;}
+.tier .tn .dot{width:10px;height:10px;border-radius:50%;}
+.tier .td{font-size:13px;color:var(--ink);margin-top:8px;line-height:1.45;padding-right:20px;}
+.tier .ul{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--grey);text-transform:uppercase;margin:13px 0 6px;}
+.tier .uk{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;font-weight:600;margin-top:8px;line-height:1.35;}
+.tier .ck{width:18px;height:18px;border-radius:5px;background:var(--indigo);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;margin-top:1px;}
+
+/* onboarding */
+.ob{padding-top:2px;}
+.prog5{display:flex;align-items:center;gap:10px;padding:6px 0 22px;}
+.prog5 .segs{display:flex;gap:6px;flex:1;}
+.prog5 .segs i{height:5px;border-radius:3px;background:var(--line);flex:1;}
+.prog5 .segs i.on{background:var(--indigo);}
+.prog5 .stp{font-size:12px;font-weight:700;color:var(--grey);white-space:nowrap;}
+.obcenter{text-align:center;padding-top:14px;}
+.obcenter .orb{margin:6px auto 18px;}
+.listening{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--indigo);text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:7px;margin-bottom:14px;}
+.listening .d{width:8px;height:8px;border-radius:50%;background:var(--indigo);}
+.obq{font-size:24px;font-weight:900;line-height:1.22;letter-spacing:-.3px;text-align:center;}
+.quote{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;margin-top:18px;text-align:left;box-shadow:0 8px 22px rgba(40,30,70,.06);}
+.quote .qk{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--grey);text-transform:uppercase;}
+.quote .qv{font-size:15px;font-weight:800;margin-top:6px;line-height:1.4;}
+.learn{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--grey);text-transform:uppercase;margin:22px 0 10px;}
+.tags{display:flex;flex-wrap:wrap;gap:9px;}
+.tg{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:8px 14px;font-size:12.5px;font-weight:700;color:var(--indigo);}
+.obtitle{font-size:28px;font-weight:900;line-height:1.15;letter-spacing:-.5px;margin:4px 0 12px;}
+.obeye{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--jade);text-transform:uppercase;}
+.obsub{font-size:14px;color:var(--grey);line-height:1.55;}
+.oboption{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:14px;cursor:pointer;background:#fff;}
+.oboption.hi{background:var(--t-indigo);border-color:transparent;}
+.oboption .oi{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.oboption .ot{font-size:15px;font-weight:900;display:flex;align-items:center;gap:8px;}
+.oboption .os{font-size:12.5px;color:var(--grey);margin-top:3px;line-height:1.4;}
+.easy{font-size:9px;font-weight:800;letter-spacing:.5px;background:var(--jade);color:#fff;padding:3px 8px;border-radius:10px;}
+.chev{margin-left:auto;color:var(--grey);font-size:22px;font-weight:700;}
+.scan{border:2px dashed #c4bcd6;border-radius:18px;padding:34px 16px;text-align:center;margin-top:18px;}
+.scan .st{font-size:14px;font-weight:800;}
+.scan .ss{font-size:12px;color:var(--grey);margin-top:4px;}
+.ordiv{display:flex;align-items:center;gap:12px;margin:22px 0 4px;color:var(--grey);font-size:10.5px;font-weight:800;letter-spacing:1px;}
+.ordiv::before,.ordiv::after{content:"";flex:1;height:1px;background:var(--line);}
+.field{border:1px solid var(--line);border-radius:14px;padding:11px 14px;margin-top:12px;}
+.field .fk{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--grey);text-transform:uppercase;}
+.field input{border:none;outline:none;font-size:15px;font-weight:700;margin-top:4px;width:100%;color:var(--ink);background:transparent;}
+.field input::placeholder{color:#b9b3c4;}
+.fine2{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--grey);margin-top:16px;}
+.fine2 .bx{width:14px;height:14px;border:1.5px solid var(--jade);border-radius:4px;flex-shrink:0;}
+.bigcheck{width:96px;height:96px;border-radius:50%;background:var(--jade);color:#fff;display:flex;align-items:center;justify-content:center;font-size:44px;margin:24px auto 18px;box-shadow:0 0 0 12px rgba(14,140,125,.12);}
+.verified-t{font-size:30px;font-weight:900;text-align:center;line-height:1.15;letter-spacing:-.5px;}
+.intel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:24px;box-shadow:0 10px 26px rgba(40,30,70,.06);}
+.intel .who{display:flex;align-items:center;gap:11px;}
+.intel .who .a{width:42px;height:42px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;}
+.intel .who .n{font-size:14px;font-weight:900;display:flex;align-items:center;gap:6px;}
+.intel .who .c{font-size:11.5px;color:var(--grey);margin-top:1px;}
+.vbadge{font-size:9px;font-weight:800;letter-spacing:.3px;background:var(--t-jade);color:var(--jade);padding:2px 7px;border-radius:10px;}
+.intel .lk{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--grey);text-transform:uppercase;margin:16px 0 9px;}
+.revrow{display:flex;justify-content:space-between;font-size:14px;padding:11px 0;border-bottom:1px solid var(--line);}
+.revrow .k{color:var(--grey);}.revrow .v{font-weight:800;}
+
+/* chromeless (onboarding hides tab bar) */
+.device.chromeless .tabbar{display:none;}
+.device.chromeless .screens{bottom:0;}
 </style></head><body>
 
 <div class="head">
@@ -205,27 +321,25 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
 
       <!-- ===== KAI (home) ===== -->
       <section class="screen active" id="kai">
-        <div class="scrhd">
-          <div class="back" onclick="openD()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
-          <h2>KAI</h2>
-          <div class="askkai" onclick="toast('KAI is listening…')"><span class="kk">K</span> Ask KAI</div>
+        <div class="khd">
+          <div class="menu" onclick="openD()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
+          <span class="lab">KAI · Life Intelligence</span>
+          <div class="me2">T<span class="on2"></span></div>
         </div>
-        <span class="eyebrow eb-indigo">Your home · Your life intelligence</span>
-
-        <div class="receipt">
-          <div class="done"><span class="check">✓</span> Gift sent</div>
-          <div class="rr"><span class="k">To</span><span class="v">First AME Church</span></div>
-          <div class="rr"><span class="k">Amount</span><span class="v">$25.00</span></div>
-          <div class="rr"><span class="k">Karma earned</span><span class="v" style="color:var(--amber)">+50</span></div>
-          <div class="fine">Receipted for you at tax time.</div>
+        <div class="greet">
+          <div class="orb"><div class="eq"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div><h3>Hi Ty.</h3><p>I circle your whole life. Ask me anything, or tap a move.</p></div>
         </div>
-        <button class="btn" onclick="go('giving')">Open Giving</button>
+        <div class="bubble ka">Good morning, Ty. Your day is light until 2, savings auto move runs today, and your church gift is queued for Sunday. Want me to handle any of it now?</div>
+        <div class="bubble me">What's my day?</div>
+        <div class="bubble ka">Light until 2, Ty. Cut at 9:30 is done, ride is timed to your 2pm studio session, and I am holding dinner at 8 for four.</div>
+        <button class="btn" onclick="go('schedule')">Open My Day</button>
 
         <div class="lbl2">Try these</div>
         <div class="trychips">
           <span class="trychip" onclick="go('schedule')">What's my day?</span>
-          <span class="trychip" onclick="go('wallet');toast('✓ Moved $50 to savings')">Move $50 to savings</span>
-          <span class="trychip" onclick="go('giving')">Give $25 to my church</span>
+          <span class="trychip" onclick="go('r-savings')">Move $50 to savings</span>
+          <span class="trychip" onclick="go('r-gift')">Give $25 to my church</span>
           <span class="trychip" onclick="go('rewards')">How many Karma points?</span>
           <span class="trychip" onclick="go('schedule')">Book my 2pm, hold dinner at 8</span>
         </div>
@@ -239,6 +353,52 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
           <div class="qmove" onclick="toast('Tip sent · +10 Karma')"><div class="qi" style="background:var(--t-jade)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2"><path d="M12 2v20M8 6h6a3 3 0 010 6H9a3 3 0 000 6h7"/></svg></div><div class="ql">Tip someone</div></div>
           <div class="qmove" onclick="openD()"><div class="qi" style="background:var(--soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="2"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></div><div class="ql">All of life</div></div>
         </div>
+      </section>
+
+      <!-- ===== KAI result: moved to savings ===== -->
+      <section class="screen" id="r-savings">
+        <div class="khd">
+          <div class="menu" onclick="openD()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
+          <span class="lab">KAI · Life Intelligence</span>
+          <div class="me2">T<span class="on2"></span></div>
+        </div>
+        <div class="bubble me" style="margin-bottom:14px;">Move $50 to savings</div>
+        <div class="receipt">
+          <div class="done"><span class="check">✓</span> Moved to savings</div>
+          <div class="rr"><span class="k">From</span><span class="v">INCard</span></div>
+          <div class="rr"><span class="k">To</span><span class="v">Savings vault</span></div>
+          <div class="rr"><span class="k">Amount</span><span class="v">$50.00</span></div>
+          <div class="fine">You are $180 from your Essence Fest goal.</div>
+        </div>
+        <button class="btn" onclick="go('wallet')">Open Money Life</button>
+        <div class="lbl2">Try these</div>
+        <div class="trychips">
+          <span class="trychip" onclick="go('schedule')">What's my day?</span>
+          <span class="trychip" onclick="go('r-savings')">Move $50 to savings</span>
+          <span class="trychip" onclick="go('r-gift')">Give $25 to my church</span>
+          <span class="trychip" onclick="go('rewards')">How many Karma points?</span>
+          <span class="trychip" onclick="go('schedule')">Book my 2pm, hold dinner at 8</span>
+        </div>
+        <div style="text-align:center;margin-top:18px;"><span class="trychip" onclick="go('kai')">← Back to KAI</span></div>
+      </section>
+
+      <!-- ===== KAI result: gift sent ===== -->
+      <section class="screen" id="r-gift">
+        <div class="khd">
+          <div class="menu" onclick="openD()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
+          <span class="lab">KAI · Life Intelligence</span>
+          <div class="me2">T<span class="on2"></span></div>
+        </div>
+        <div class="bubble me" style="margin-bottom:14px;">Give $25 to my church</div>
+        <div class="receipt">
+          <div class="done"><span class="check">✓</span> Gift sent</div>
+          <div class="rr"><span class="k">To</span><span class="v">First AME Church</span></div>
+          <div class="rr"><span class="k">Amount</span><span class="v">$25.00</span></div>
+          <div class="rr"><span class="k">Karma earned</span><span class="v" style="color:var(--amber)">+50</span></div>
+          <div class="fine">Receipted for you at tax time.</div>
+        </div>
+        <button class="btn" onclick="go('giving')">Open Giving</button>
+        <div style="text-align:center;margin-top:18px;"><span class="trychip" onclick="go('kai')">← Back to KAI</span></div>
       </section>
 
       <!-- ===== Money Life ===== -->
@@ -376,16 +536,19 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
       <section class="screen" id="schedule">
         <div class="scrhd">
           <div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div>
-          <h2>Schedule</h2>
+          <h2>My Day</h2>
           <div class="askkai" onclick="toast('KAI is planning your day…')"><span class="kk">K</span> Ask KAI</div>
         </div>
-        <span class="eyebrow eb-cobalt">My Day · Managed by KAI</span>
-        <div class="hero cobalt"><span class="lab">Today</span><div style="font-size:22px;font-weight:900;margin-top:4px;">3 things, all handled</div><div class="note">KAI holds your evening open after 8.</div></div>
-        <div class="phlist">
-          <div class="phrow"><div class="pri"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><div class="pt">2:00 — Studio session</div><div class="ps">Booked · car arriving 1:30</div></div></div>
-          <div class="phrow"><div class="pri"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><div><div class="pt">5:30 — Review Drops</div><div class="ps">2 items ready to launch</div></div></div>
-          <div class="phrow"><div class="pri"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 11l8-6 8 6v8H4z"/></svg></div><div><div class="pt">8:00 — Dinner, held</div><div class="ps">The Map has three options</div></div></div>
+        <span class="eyebrow eb-cobalt">Thursday · Managed by KAI</span>
+        <div class="daymsg"><span class="kk">K</span><p>Here is your day, Ty. Your 2pm is booked, dinner is held at 8, and I lined up a ride so you are never waiting.</p></div>
+        <div class="tl">
+          <div class="tlrow"><div class="tltime">9:30</div><div class="tlline"><div class="tldot done"></div><div class="tlbar"></div></div><div class="tlcard"><div class="tt">The cut</div><div class="ts">Fade at Level Up · confirmed</div><span class="tlbadge done">Done by KAI</span></div></div>
+          <div class="tlrow"><div class="tltime">1:40</div><div class="tlline"><div class="tldot"></div><div class="tlbar"></div></div><div class="tlcard"><div class="tt">Ride downtown</div><div class="ts">KAI timed it to your 2pm</div><span class="tlbadge booked">Booked by KAI</span></div></div>
+          <div class="tlrow"><div class="tltime">2:00</div><div class="tlline"><div class="tldot"></div><div class="tlbar"></div></div><div class="tlcard"><div class="tt">Studio session</div><div class="ts">Booked this morning</div><span class="tlbadge booked">Booked by KAI</span></div></div>
+          <div class="tlrow"><div class="tltime">8:00</div><div class="tlline"><div class="tldot hold"></div></div><div class="tlcard"><div class="tt">Dinner, chef's counter</div><div class="ts">Held for 4 · your circle invited</div><span class="tlbadge hold">Held by KAI</span></div></div>
         </div>
+        <button class="btn cob" onclick="toast('What should KAI add or hold?')">Add or hold something</button>
+        <div style="text-align:center;margin-top:14px;"><span class="trychip" onclick="toast('KAI is managing your day')">Ask KAI to manage my day</span></div>
       </section>
 
       <!-- ===== The Map ===== -->
@@ -427,12 +590,139 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
       <!-- ===== Choose your level ===== -->
       <section class="screen" id="level">
         <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Choose your level</h2></div>
-        <span class="eyebrow eb-indigo">Member to Creator · Step up anytime</span>
-        <div class="levels">
-          <div class="lvl on" onclick="setLevel(this,'Member')"><div class="lt">Member <span class="badge">Current</span></div><div class="ls">Money Life, Karma, Giving, and your scene. Everything to live inside INDIGGI.</div></div>
-          <div class="lvl" onclick="setLevel(this,'Creator')"><div class="lt">Creator</div><div class="ls">Everything in Member, plus Creator OS — audience, rooms, drops, and revenue.</div></div>
+        <p class="obsub" style="margin-bottom:2px;">Start where you are. Move up anytime.</p>
+        <div class="tier" onclick="pickTier(this,'Member')"><div class="radio"></div>
+          <div class="tn"><span class="dot" style="background:var(--indigo)"></span>MEMBER</div>
+          <div class="td">You are in. The whole world of INDIGGI, and Karma from day one.</div>
+          <div class="ul">Unlocks</div>
+          <div class="uk"><span class="ck">✓</span> KAI across money, giving, rewards, schedule</div>
+          <div class="uk"><span class="ck">✓</span> Karma on everyday spend, and a seat in The Circle</div>
+          <div class="uk"><span class="ck">✓</span> INCard, your money in one place</div>
         </div>
-        <button class="btn" onclick="go('creator')">Open Creator OS</button>
+        <div class="tier on" onclick="pickTier(this,'Insider')"><div class="radio"></div>
+          <div class="tn"><span class="dot" style="background:var(--indigo)"></span>INSIDER</div>
+          <div class="td">Closer to the culture. Early access, more Karma, more room.</div>
+          <div class="ul">Unlocks</div>
+          <div class="uk"><span class="ck">✓</span> Early drops, member events, priority access</div>
+          <div class="uk"><span class="ck">✓</span> Boosted Karma earn rate</div>
+          <div class="uk"><span class="ck">✓</span> Insider rooms and community spaces</div>
+        </div>
+        <div class="tier" onclick="pickTier(this,'Founding Member')"><div class="radio"></div>
+          <div class="tn"><span class="dot" style="background:var(--amber)"></span>FOUNDING MEMBER</div>
+          <div class="td">Built it with us. A permanent place in the story, and the perks that come with being early.</div>
+          <div class="ul">Unlocks</div>
+          <div class="uk"><span class="ck">✓</span> Everything in Insider, locked in for life</div>
+          <div class="uk"><span class="ck">✓</span> Founders INCard and revenue share</div>
+        </div>
+        <button class="btn" onclick="toast('Level confirmed')">Set my level</button>
+      </section>
+
+      <!-- ===== Onboarding: intro (Life Intel) ===== -->
+      <section class="screen" id="ob-intro">
+        <div class="ob">
+          <div class="khd"><div class="me2" style="background:var(--grad)">K</div><span class="lab" style="color:var(--ink);font-size:14px;letter-spacing:0;">Life Intel</span></div>
+          <span class="obeye">A verified culture</span>
+          <div class="obtitle">Let's set up your Life Intel.</div>
+          <p class="obsub">KAI learns how you actually move, so it can move for you. Two minutes, mostly just talking. And you get verified, so everything here is real.</p>
+          <div class="oboption hi" onclick="go('ob-name')"><div class="oi" style="background:var(--grad)"><div class="eq" style="height:22px;gap:3px;"><i style="width:3px;"></i><i style="width:3px;"></i><i style="width:3px;"></i><i style="width:3px;"></i><i style="width:3px;"></i></div></div><div><div class="ot">Set it up with KAI <span class="easy">EASIEST</span></div><div class="os">Just talk. KAI asks, you answer, it is done.</div></div></div>
+          <div class="oboption" onclick="go('ob-name')"><div class="oi" style="background:var(--soft)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--grey)" stroke-width="2"><path d="M4 20l4-1 10-10-3-3L5 16z"/><path d="M14 6l3 3"/></svg></div><div><div class="ot">Do it myself</div><div class="os">Type it in, at your own pace.</div></div><span class="chev">›</span></div>
+          <div class="fine2"><span class="bx"></span> Yours, and yours to change anytime.</div>
+        </div>
+      </section>
+
+      <!-- ===== Onboarding: name (1/5) ===== -->
+      <section class="screen" id="ob-name">
+        <div class="ob">
+          <div class="prog5"><div class="segs"><i class="on"></i><i></i><i></i><i></i><i></i></div><span class="stp">Step 1 of 5</span></div>
+          <div class="obcenter">
+            <div class="orb big"><div class="eq"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="listening"><span class="d"></span> Listening</div>
+            <div class="obq">Let's start easy. What should I call you?</div>
+            <div class="quote"><div class="qk">I heard</div><div class="qv">"Ty. Everybody calls me Ty."</div></div>
+          </div>
+          <button class="btn" onclick="go('ob-scene')">Next</button>
+          <div style="text-align:center;margin-top:12px;"><span onclick="toast('Type mode')" style="color:var(--indigo);font-weight:800;font-size:12.5px;cursor:pointer;">Prefer to type? Tap here</span></div>
+        </div>
+      </section>
+
+      <!-- ===== Onboarding: scene (2/5) ===== -->
+      <section class="screen" id="ob-scene">
+        <div class="ob">
+          <div class="prog5"><div class="segs"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div><span class="stp">Step 2 of 5</span></div>
+          <div class="obcenter">
+            <div class="orb big"><div class="eq"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="obq">Where do you move, Ty?</div>
+            <div class="quote"><div class="qk">You said</div><div class="qv">"LA is home base, but I'm everywhere."</div></div>
+          </div>
+          <div class="learn">KAI is learning</div>
+          <div class="tags"><span class="tg">Los Angeles</span><span class="tg">New York</span><span class="tg">Atlanta</span><span class="tg">Moves global</span></div>
+          <button class="btn" onclick="go('ob-taste')">Next</button>
+        </div>
+      </section>
+
+      <!-- ===== Onboarding: taste (3/5) ===== -->
+      <section class="screen" id="ob-taste">
+        <div class="ob">
+          <div class="prog5"><div class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div><span class="stp">Step 3 of 5</span></div>
+          <div class="obcenter">
+            <div class="orb big"><div class="eq"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="obq">Now the fun part. What does your perfect Saturday sound like?</div>
+            <div class="quote"><div class="qk">You said</div><div class="qv">"Rooftops, live music, a good dinner, my people around."</div></div>
+          </div>
+          <div class="learn">KAI is learning</div>
+          <div class="tags"><span class="tg">Rooftop energy</span><span class="tg">Live sets</span><span class="tg">Chef's counters</span><span class="tg">Your circle close</span></div>
+          <button class="btn" onclick="go('ob-verify')">Next</button>
+        </div>
+      </section>
+
+      <!-- ===== Onboarding: verify (4/5) ===== -->
+      <section class="screen" id="ob-verify">
+        <div class="ob">
+          <div class="prog5"><div class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><span class="stp">Step 4 of 5</span></div>
+          <span class="obeye">Verify you</span>
+          <div class="obtitle">This is a verified culture.</div>
+          <p class="obsub">One quick check, so your access, your card, and your rooms are really yours. KAI can scan it, or add it yourself.</p>
+          <div class="scan"><div class="st">Scan with KAI</div><div class="ss">Point at your ID, KAI does the rest</div></div>
+          <div class="ordiv">Or add it myself</div>
+          <div class="field"><div class="fk">Legal name</div><input placeholder="Enter your name"></div>
+          <div class="field"><div class="fk">Date of birth</div><input placeholder="MM / DD / YYYY"></div>
+          <button class="btn jade" onclick="go('ob-review')">Verify me</button>
+          <div class="fine2"><span class="bx"></span> Encrypted. Yours. Never sold.</div>
+        </div>
+      </section>
+
+      <!-- ===== Onboarding: review (5/5) ===== -->
+      <section class="screen" id="ob-review">
+        <div class="ob">
+          <div class="prog5"><div class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><span class="stp">Step 5 of 5</span></div>
+          <span class="obeye">Almost in</span>
+          <div class="obtitle">Here's what KAI has, Ty.</div>
+          <p class="obsub">Confirm and your Life Intel goes live. You can change any of it, anytime.</p>
+          <div class="intel" style="margin-top:18px;">
+            <div class="revrow"><span class="k">Name</span><span class="v">Ty</span></div>
+            <div class="revrow"><span class="k">Home base</span><span class="v">Los Angeles</span></div>
+            <div class="revrow"><span class="k">Your scene</span><span class="v">Rooftops · live sets</span></div>
+            <div class="revrow" style="border:none;"><span class="k">Identity</span><span class="v" style="color:var(--jade)">Verified ✓</span></div>
+          </div>
+          <button class="btn" onclick="go('ob-done')">Confirm and enter</button>
+        </div>
+      </section>
+
+      <!-- ===== Onboarding: verified / done ===== -->
+      <section class="screen" id="ob-done">
+        <div class="ob">
+          <div class="obcenter" style="padding-top:28px;">
+            <div class="bigcheck">✓</div>
+            <div class="verified-t">You're verified.<br>You're in.</div>
+          </div>
+          <div class="intel">
+            <div class="who"><div class="a">T</div><div><div class="n">Ty <span class="vbadge">● VERIFIED</span></div><div class="c">Los Angeles · moves global</div></div></div>
+            <div class="lk">Your life intel knows</div>
+            <div class="tags"><span class="tg">Rooftop energy</span><span class="tg">Live sets</span><span class="tg">Chef's counters</span><span class="tg">Creative crowd</span><span class="tg">Your circle close</span></div>
+          </div>
+          <p class="obsub" style="text-align:center;margin-top:18px;">This is yours. See it, change it, take it with you, anytime.</p>
+          <button class="btn" onclick="go('kai')">Enter INDIGGI</button>
+        </div>
       </section>
 
     </div><!-- /screens -->
@@ -465,6 +755,7 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
         <div class="ditem" onclick="nav('profile')"><div class="mi" style="background:var(--t-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg></div><div class="dtxt"><div class="dt">Profile</div><div class="ds">Your verified identity and taste</div></div></div>
         <div class="ditem" onclick="nav('level')"><div class="mi" style="background:var(--t-cobalt)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="2"><path d="M5 20V10M12 20V4M19 20v-7"/></svg></div><div class="dtxt"><div class="dt">Choose your level</div><div class="ds">Member to Creator, step up anytime</div></div></div>
         <div class="ditem" onclick="nav('creator')"><div class="mi" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div><div class="dtxt"><div class="dt">Creator OS</div><div class="ds">Your audience, rooms, revenue</div></div></div>
+        <div class="ditem" style="border-top:1px solid var(--line);margin-top:6px;padding-top:14px;" onclick="nav('ob-intro')"><div class="mi" style="background:var(--grad)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3"/></svg></div><div class="dtxt"><div class="dt">Set up Life Intel</div><div class="ds">Replay the onboarding flow</div></div></div>
       </div>
       <div class="dfoot"><button class="dclose" onclick="closeD()">Close</button></div>
     </div>
@@ -476,13 +767,15 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
 <div class="foot">INDIGGI International Holdings · <b>Culture is the new technology</b></div>
 
 <script>
-var tabFor={kai:'kai',creator:'kai',wallet:'money',rewards:'karma',giving:'karma',schedule:'schedule'};
+var tabFor={kai:'kai','r-savings':'kai','r-gift':'kai',creator:'kai',wallet:'money',rewards:'karma',giving:'karma',schedule:'schedule'};
+var chromeless={'ob-intro':1,'ob-name':1,'ob-scene':1,'ob-taste':1,'ob-verify':1,'ob-review':1,'ob-done':1};
 var cur='kai', stack=[];
 function go(id,noPush){
   var el=document.getElementById(id); if(!el){id='kai';el=document.getElementById('kai');}
   if(!noPush && cur && cur!==id) stack.push(cur);
   document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});
   el.classList.add('active');
+  document.querySelector('.device').classList.toggle('chromeless',!!chromeless[id]);
   document.querySelector('.screens').scrollTop=0;
   var tab=tabFor[id]||'';
   document.querySelectorAll('.tabbar .t').forEach(function(t){t.classList.toggle('on',!!tab && t.dataset.tab===tab);});
@@ -494,7 +787,7 @@ function nav(id){closeD();go(id);}
 function openD(){document.getElementById('drawer').classList.add('open');document.getElementById('scrim').classList.add('show');}
 function closeD(){document.getElementById('drawer').classList.remove('open');document.getElementById('scrim').classList.remove('show');}
 var tT;function toast(m){var t=document.getElementById('toast');t.innerHTML=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){t.classList.remove('show');},2100);}
-function setLevel(el,name){document.querySelectorAll('.lvl').forEach(function(l){l.classList.remove('on');});el.classList.add('on');toast('Level set to '+name);}
+function pickTier(el,name){document.querySelectorAll('.tier').forEach(function(l){l.classList.remove('on');});el.classList.add('on');}
 (function(){var h=(location.hash||'').replace('#','');if(h&&document.getElementById(h))go(h,true);})();
 </script>
 </body></html>
