@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>INDIGGI — App Demo</title><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Indiggi — App Demo</title><style>
 :root{
   --indigo:#4733C7; --inkindigo:#2B2150;
   --cobalt:#1E5BD6; --clay:#B5512E; --amber:#C98217; --jade:#0E8C7D; --slate:#5C6E8C;
@@ -429,13 +429,102 @@ body{background:#e9e6f3 !important;}
 .vbadge{background:var(--t-jade);color:var(--jade);}
 .toast{background:var(--ink);}
 .foot b{color:var(--ink);}
+
+/* ===== logo ===== */
+.logo-row{display:flex;align-items:center;gap:11px;justify-content:center;}
+.logomark{flex-shrink:0;display:block;}
+.wordmark{font-weight:800;letter-spacing:-1.5px;font-size:27px;line-height:1;}
+.wordmark.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+/* ===== Home ===== */
+.rowhdr .lnk{font-size:12.5px;font-weight:800;color:var(--pink);cursor:pointer;}
+.worlds{display:flex;gap:15px;overflow-x:auto;padding:6px 0 4px;}
+.worlds::-webkit-scrollbar{height:0;}
+.world{flex-shrink:0;width:62px;text-align:center;cursor:pointer;}
+.world .ring{width:60px;height:60px;border-radius:50%;padding:3px;background:var(--grad);}
+.world .face{width:100%;height:100%;border-radius:50%;background:#e9e6f3;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;color:var(--purple);box-shadow:var(--raise-sm);}
+.world .wl{font-size:11px;font-weight:700;margin-top:6px;color:var(--ink);white-space:nowrap;}
+.world .wl.live{color:var(--pink);}
+.world.add .ring{background:none;padding:0;}
+.world.add .face{border:2px dashed #b9b1d6;color:var(--purple);box-shadow:none;background:transparent;font-size:26px;font-weight:400;}
+.evt{border-radius:22px;overflow:hidden;position:relative;color:#fff;min-height:206px;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;cursor:pointer;box-shadow:var(--raise);margin-top:6px;}
+.evt .bg{position:absolute;inset:0;background:linear-gradient(160deg,#5B2AAE,#3a1f6e 55%,#152344);}
+.evt .ov{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0) 30%,rgba(18,10,45,.88));}
+.evt>.z{position:relative;z-index:2;}
+.evt .vip{position:absolute;top:16px;left:16px;z-index:2;background:var(--grad);font-size:10px;font-weight:800;letter-spacing:1px;padding:5px 11px;border-radius:20px;}
+.evt .heart{position:absolute;top:14px;right:14px;z-index:2;width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:16px;}
+.evt .host{font-size:12px;opacity:.95;display:flex;align-items:center;gap:8px;}
+.evt .host .hd{width:20px;height:20px;border-radius:50%;background:var(--grad);}
+.evt .ttl{font-size:23px;font-weight:900;margin-top:6px;letter-spacing:-.5px;}
+.evt .dt2{font-size:12.5px;opacity:.9;margin-top:2px;}
+.evt .claim{position:absolute;right:18px;bottom:18px;z-index:2;background:#fff;color:var(--purple);font-weight:800;font-size:14px;padding:11px 20px;border-radius:24px;}
+.evt .dots{display:flex;gap:5px;margin-top:12px;}
+.evt .dots i{width:16px;height:5px;border-radius:3px;background:rgba(255,255,255,.4);}
+.evt .dots i.on{background:var(--pink);width:22px;}
+.askcard{background:var(--grad);border-radius:22px;padding:20px;color:#fff;position:relative;box-shadow:var(--glow);overflow:hidden;margin-top:14px;}
+.askcard h3{font-size:22px;font-weight:900;}
+.askcard .asp{font-size:13px;opacity:.95;margin-top:3px;max-width:62%;}
+.askcard .miniorb{position:absolute;top:20px;right:20px;width:72px;height:72px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.22);}
+.askcard .miniorb .eq{height:30px;gap:3px;}.askcard .miniorb .eq i{width:4px;background:var(--purple);}
+.askcard .speak{position:absolute;top:98px;right:20px;width:72px;text-align:center;font-size:8.5px;font-weight:800;letter-spacing:1px;opacity:.9;}
+.askcard .kchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;max-width:64%;}
+.askcard .kc{background:rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:700;padding:8px 13px;border-radius:18px;cursor:pointer;}
+.mods{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+.mod{background:var(--card);border:1px solid rgba(255,255,255,.55);box-shadow:var(--raise-sm);border-radius:18px;padding:16px;cursor:pointer;}
+.mod .mh{display:flex;align-items:center;justify-content:space-between;}
+.mod .mt{font-size:13px;font-weight:800;color:var(--ink);}
+.mod .mi2{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.mod .mi2 svg{width:17px;height:17px;}
+.mod .mv{font-size:19px;font-weight:900;margin-top:14px;color:var(--ink);font-variant-numeric:tabular-nums;}
+.mod .ms{font-size:11.5px;color:var(--grey);margin-top:3px;}
+.mod.wide{grid-column:1/3;}
+.eyebtn{cursor:pointer;color:var(--purple);font-size:11px;font-weight:800;}
+
+/* ===== Wallet detail ===== */
+.wcard{background:var(--grad);border-radius:20px;padding:20px;color:#fff;position:relative;min-height:168px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--glow);margin-top:6px;}
+.wcard .chip{width:34px;height:26px;border-radius:6px;background:linear-gradient(135deg,#f2d9a8,#c99a54);}
+.wcard .brand{position:absolute;top:20px;right:20px;font-size:13px;font-weight:800;}
+.wcard .inlogo{font-size:44px;font-weight:900;font-style:italic;letter-spacing:-2px;line-height:1;}
+.wcard .row{display:flex;justify-content:space-between;align-items:flex-end;}
+.wcard .no{font-size:15px;letter-spacing:2px;font-weight:700;}
+.wcard .visa{font-size:19px;font-weight:900;font-style:italic;}
+.wactions{display:flex;gap:6px;margin-top:16px;}
+.waction{text-align:center;cursor:pointer;flex:1;}
+.waction .wc{width:46px;height:46px;border-radius:15px;background:#e9e6f3;box-shadow:var(--raise-sm);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;}
+.waction:active .wc{box-shadow:var(--press);}
+.waction .wc svg{width:20px;height:20px;stroke:var(--purple);fill:none;}
+.waction .wcl{font-size:10.5px;font-weight:700;color:var(--ink);}
+.totalbal{background:var(--card);border:1px solid rgba(255,255,255,.55);box-shadow:var(--raise-sm);border-radius:20px;padding:18px;margin-top:16px;}
+.totalbal .tl{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--grey);text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;}
+.totalbal .tb{font-size:36px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums;margin-top:6px;}
+.totalbal .tp{font-size:12.5px;font-weight:800;color:var(--jade);margin-top:2px;}
+.allocbar{display:flex;height:16px;border-radius:9px;overflow:hidden;box-shadow:var(--press);margin-top:16px;}
+.allocbar i{height:100%;}
+.alloclegend{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:12px;}
+.alloclegend span{font-size:11.5px;color:var(--grey);font-weight:700;display:flex;align-items:center;gap:6px;}
+.alloclegend b{width:10px;height:10px;border-radius:3px;}
+.vault2{background:var(--card);border:1px solid rgba(255,255,255,.55);box-shadow:var(--raise-sm);border-radius:16px;padding:15px;margin-top:10px;}
+.vault2 .vtop{display:flex;justify-content:space-between;align-items:center;}
+.vault2 .vn{font-size:14px;font-weight:800;color:var(--ink);}
+.vault2 .vpct{font-size:13px;font-weight:900;color:var(--purple);}
+.vault2 .vbar{height:8px;border-radius:6px;background:#dcd8ec;overflow:hidden;margin:10px 0 8px;box-shadow:var(--press);}
+.vault2 .vbar i{display:block;height:100%;background:var(--grad);}
+.vault2 .vsub{font-size:11.5px;color:var(--grey);font-weight:600;}
+.vault2 .vtag{font-size:9px;font-weight:800;letter-spacing:.5px;color:var(--jade);background:var(--t-jade);padding:3px 8px;border-radius:10px;margin-left:8px;}
+.wadd{font-size:12px;font-weight:800;color:var(--purple);margin-top:10px;cursor:pointer;}
 </style></head><body>
 
 <div class="head">
-  <h1>INDIGGI — Click-Through Demo</h1>
-  <p>Culture is the new technology</p>
+  <div class="logo-row">
+    <svg class="logomark" width="40" height="40" viewBox="0 0 100 100">
+      <defs><linearGradient id="igGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7B3FE4"/><stop offset="1" stop-color="#E0457B"/></linearGradient></defs>
+      <g fill="url(#igGrad)"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g>
+    </svg>
+    <span class="wordmark grad">Indiggi</span>
+  </div>
+  <p style="margin-top:8px;">Culture is the new technology</p>
 </div>
-<div class="hint">Tap the <b>bottom nav</b> and the <b>Menu</b> to move through the app.</div>
+<div class="hint">A click-through demo — tap the <b>bottom nav</b> and the <b>Menu</b> to move through the app.</div>
 
 <div class="device chromeless">
   <div class="island"></div>
@@ -449,6 +538,72 @@ body{background:#e9e6f3 !important;}
     </div>
 
     <div class="screens">
+
+      <!-- ===== Home ===== -->
+      <section class="screen" id="home">
+        <div class="khd">
+          <div class="menu" onclick="openD()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
+          <svg class="logomark" width="26" height="26" viewBox="0 0 100 100" style="flex:1;max-width:26px;"><g fill="url(#igGrad)"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g></svg>
+          <span class="lab" style="flex:1;">Superfan</span>
+          <div class="me2">T<span class="on2"></span></div>
+        </div>
+        <h2 style="font-size:30px;font-weight:900;letter-spacing:-.5px;"><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;">Hi Ty.</span></h2>
+        <p style="font-size:14px;color:var(--grey);margin-top:2px;">Your world, today.</p>
+
+        <div class="rowhdr"><h3>Your Worlds</h3><span class="lnk" onclick="go('inlife')">Discover</span></div>
+        <div class="worlds">
+          <div class="world" onclick="go('inlife')"><div class="ring"><div class="face">◉</div></div><div class="wl live">Live now</div></div>
+          <div class="world" onclick="go('creator')"><div class="ring"><div class="face">✦</div></div><div class="wl">New drop</div></div>
+          <div class="world" onclick="go('map-tonight')"><div class="ring"><div class="face">♫</div></div><div class="wl">Event</div></div>
+          <div class="world" onclick="go('map-tonight')"><div class="ring"><div class="face">▤</div></div><div class="wl">Tickets</div></div>
+          <div class="world add" onclick="go('inlife')"><div class="ring"><div class="face">+</div></div><div class="wl">Discover</div></div>
+        </div>
+
+        <div class="rowhdr"><h3>Happening Tonight</h3></div>
+        <div class="evt" onclick="go('map-tonight')">
+          <div class="bg"></div><div class="ov"></div>
+          <span class="vip">VIP</span>
+          <span class="heart">♥</span>
+          <div class="z">
+            <div class="host"><span class="hd"></span> Hosted by KAI</div>
+            <div class="ttl">Rooftop set · Arts District</div>
+            <div class="dt2">Fri, 26 June · Los Angeles</div>
+            <div class="dots"><i class="on"></i><i></i><i></i></div>
+          </div>
+          <span class="claim" onclick="event.stopPropagation();toast('✓ Spot claimed for tonight')">Claim</span>
+        </div>
+
+        <div class="askcard" onclick="go('kai')">
+          <div class="miniorb"><div class="eq"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="speak">TAP TO SPEAK</div>
+          <h3>Ask KAI</h3>
+          <p class="asp">Your voice concierge — just speak.</p>
+          <div class="kchips">
+            <span class="kc" onclick="event.stopPropagation();go('schedule')">What's my day?</span>
+            <span class="kc" onclick="event.stopPropagation();go('r-savings')">Move money</span>
+            <span class="kc" onclick="event.stopPropagation();go('map-tonight')">Tonight</span>
+          </div>
+        </div>
+
+        <div class="rowhdr"><h3>Your world</h3></div>
+        <div class="mods">
+          <div class="mod wide" onclick="go('wallet')">
+            <div class="mh"><span class="mt">Your Wallet</span><span class="eyebtn" onclick="event.stopPropagation();tog('homeBal')">Show</span></div>
+            <div class="mv balv" id="homeBal" data-v="$42,310.00">$ ••••••</div>
+            <div class="ms">foundersin · •••• 4921 · tap to open</div>
+          </div>
+          <div class="mod" onclick="go('inlife')">
+            <div class="mh"><span class="mt">InLife</span><span class="mi2" style="background:var(--t-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span></div>
+            <div class="mv" style="font-size:15px;">Tonight's scene</div>
+            <div class="ms">3 spots in your circle</div>
+          </div>
+          <div class="mod" onclick="go('rewards')">
+            <div class="mh"><span class="mt">Rewards</span><span class="mi2" style="background:var(--t-amber)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16l-5.4 3 1.2-6L3.3 9.3l6.1-.7z"/></svg></span></div>
+            <div class="mv">18,240</div>
+            <div class="ms">Karma · +1,200 this week</div>
+          </div>
+        </div>
+      </section>
 
       <!-- ===== KAI (home) ===== -->
       <section class="screen" id="kai">
@@ -534,43 +689,69 @@ body{background:#e9e6f3 !important;}
         <div style="text-align:center;margin-top:18px;"><span class="trychip" onclick="go('kai')">← Back to KAI</span></div>
       </section>
 
-      <!-- ===== Money Life ===== -->
+      <!-- ===== Wallet ===== -->
       <section class="screen" id="wallet">
         <div class="scrhd">
           <div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div>
-          <h2>Money Life</h2>
+          <h2>Wallet</h2>
           <div class="askkai" onclick="toast('KAI is listening…')"><span class="kk">K</span> Ask KAI</div>
         </div>
-        <span class="eyebrow eb-clay">INCard · Your money, circled by KAI</span>
+        <span class="eyebrow eb-clay">Daily spending &amp; investments</span>
 
-        <div class="hero clay">
-          <div class="topline"><span class="lab">Available balance</span><span class="hide" onclick="toast('Balance hidden')">Hide</span></div>
-          <div class="big">$4,820.60</div>
-          <span class="inner" style="display:inline-block;margin-top:4px;padding:4px 11px;border-radius:12px;font-weight:800;">INCard · Founders</span>
-        </div>
-
-        <div class="incard">
-          <div><div class="chip"></div><span class="founders">Founders</span></div>
+        <div class="wcard">
+          <div><div class="chip"></div><span class="brand">founders<i style="font-style:italic;">in</i>.</span></div>
           <div class="inlogo">in</div>
-          <div class="row"><span class="no">•••• 4820</span><span class="visa">VISA</span></div>
+          <div class="row"><span class="no">•••• 4921</span><span class="visa">VISA</span></div>
         </div>
 
-        <div class="acts">
-          <div class="act" onclick="go('mv-move')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="al">Move money</div></div>
-          <div class="act" onclick="go('mv-freeze')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9"/></svg></div><div class="al">Freeze</div></div>
-          <div class="act" onclick="go('mv-pay')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10h18"/></svg></div><div class="al">Pay</div></div>
+        <div class="wactions">
+          <div class="waction" onclick="go('mv-move')"><div class="wc"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="wcl">Send</div></div>
+          <div class="waction" onclick="toast('Add funds to Wallet')"><div class="wc"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><div class="wcl">Add</div></div>
+          <div class="waction" onclick="go('frac')"><div class="wc"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 18l5-6 4 3 6-8"/><path d="M4 20h16"/></svg></div><div class="wcl">Invest</div></div>
+          <div class="waction" onclick="go('qm-crypto')"><div class="wc"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg></div><div class="wcl">Convert</div></div>
+          <div class="waction" onclick="go('mv-freeze')"><div class="wc"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg></div><div class="wcl">Details</div></div>
         </div>
 
-        <div class="kaimsg">
-          <span class="kk">K</span>
-          <p>I moved $50 to savings this morning like you asked. You are <b>$180</b> from your Essence Fest travel goal.</p>
+        <div class="totalbal">
+          <div class="tl"><span>Total balance</span><span class="eyebtn" onclick="tog('walletBal')">Show</span></div>
+          <div class="tb balv" id="walletBal" data-v="$42,310.00">$ ••••••</div>
+          <div class="tp">▲ 1.8% this month</div>
+          <div class="allocbar"><i style="width:66%;background:var(--purple)"></i><i style="width:22%;background:var(--pink)"></i><i style="width:7%;background:#E08A2B"></i><i style="width:5%;background:#0E9B86"></i></div>
+          <div class="alloclegend">
+            <span><b style="background:var(--purple)"></b>Cash 66%</span>
+            <span><b style="background:var(--pink)"></b>Crypto 22%</span>
+            <span><b style="background:#E08A2B"></b>Gold 7%</span>
+            <span><b style="background:#0E9B86"></b>Real Estate 5%</span>
+          </div>
         </div>
 
-        <div class="rowhdr"><h3>Fractionalization Suite</h3><a onclick="go('frac')">See all</a></div>
-        <p style="font-size:12.5px;color:var(--grey);">Own a slice of real assets, from a dollar.</p>
-        <div class="frac">
-          <div class="fcard" onclick="go('frac')"><div class="fn">Culture Fund</div><div class="fp">Creator equity index</div><div class="fv">$1,240 <small>+8.2%</small></div></div>
-          <div class="fcard" onclick="go('frac')"><div class="fn">Bricks LA</div><div class="fp">Fractional real estate</div><div class="fv">$860 <small>+3.4%</small></div></div>
+        <div class="rowhdr"><h3>Accounts &amp; Holdings</h3><span class="lnk" onclick="toast('Account details')">More Info</span></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-indigo);color:var(--purple)">$</div><div><div class="nm">Cash</div><div class="sb">Global USD</div></div></div><div class="vv">$27,989.00</div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-clay);color:var(--pink)">₿</div><div><div class="nm">Crypto</div><div class="sb">BTC, ETC, SOL</div></div></div><div class="vv">$9,420.00</div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-amber);color:#E08A2B">◍</div><div><div class="nm">Gold</div><div class="sb">Fractional oz</div></div></div><div class="vv">$2,901.00</div></div>
+        <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--t-jade);color:#0E9B86">⌂</div><div><div class="nm">Real Estate</div><div class="sb">Fractional</div></div></div><div class="vv">$2,000.00</div></div>
+
+        <div class="rowhdr"><h3>Recent Spending</h3><span class="lnk" onclick="toast('All transactions')">See All</span></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:#ffe1e1;color:#C0392B">N</div><div><div class="nm">Netflix</div><div class="sb">7:45pm</div></div></div><div class="vv">$15.99</div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-clay);color:var(--pink)">C</div><div><div class="nm">Carbone</div><div class="sb">Yesterday</div></div></div><div class="vv">$344.89</div></div>
+        <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--t-cobalt);color:var(--cobalt)">◆</div><div><div class="nm">FIFA</div><div class="sb">22 June</div></div></div><div class="vv">$2,799.99</div></div>
+
+        <div class="rowhdr"><h3>Vaults</h3><span class="lnk" onclick="toast('Edit vaults')">Edit</span></div>
+        <div class="vault2">
+          <div class="vtop"><span class="vn">European Trip <span class="vtag">ALMOST THERE</span></span><span class="vpct">80%</span></div>
+          <div class="vbar"><i style="width:80%"></i></div>
+          <div class="vsub">$4,000 of $5,000 · funded</div>
+          <div class="wadd" onclick="toast('Added to European Trip vault')">+ Add to this vault</div>
+        </div>
+        <div class="vault2">
+          <div class="vtop"><span class="vn">World Cup Final</span><span class="vpct">20%</span></div>
+          <div class="vbar"><i style="width:20%"></i></div>
+          <div class="vsub">$400 of $2,000</div>
+        </div>
+        <div class="vault2">
+          <div class="vtop"><span class="vn">New Shoes</span><span class="vpct">70%</span></div>
+          <div class="vbar"><i style="width:70%"></i></div>
+          <div class="vsub">$210 of $300</div>
         </div>
       </section>
 
@@ -632,7 +813,7 @@ body{background:#e9e6f3 !important;}
         </div>
         <div class="cause">
           <div class="ci" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><path d="M6 8V6a2 2 0 012-2h8a2 2 0 012 2v2"/><rect x="4" y="8" width="16" height="12" rx="2"/></svg></div>
-          <div class="cinfo"><div class="cn">Neighborhood Food Drive</div><div class="cs">One time · matched by INDIGGI</div></div>
+          <div class="cinfo"><div class="cn">Neighborhood Food Drive</div><div class="cs">One time · matched by Indiggi</div></div>
           <button class="give" onclick="toast('✓ $25 sent · matched to $50')">Give $25</button>
         </div>
 
@@ -649,10 +830,10 @@ body{background:#e9e6f3 !important;}
         </div>
 
         <div class="hero clay">
-          <span class="eb">Creator · INDIGGI</span>
+          <span class="eb">Creator · Indiggi</span>
           <h3>Creator OS</h3>
           <p>Own your audience, your rooms, your revenue. This is where you build.</p>
-          <p>Your people, your spaces, your money, all in one place inside INDIGGI.</p>
+          <p>Your people, your spaces, your money, all in one place inside Indiggi.</p>
         </div>
 
         <div class="gtiles">
@@ -712,7 +893,7 @@ body{background:#e9e6f3 !important;}
         <div class="ph">
           <div class="pi" style="background:var(--grad);font-size:30px;font-weight:900;">T</div>
           <h3>Ty</h3><div class="tag">Verified · Tastemaker</div>
-          <p>Los Angeles · 18,240 Karma. Your verified identity and taste, portable across INDIGGI.</p>
+          <p>Los Angeles · 18,240 Karma. Your verified identity and taste, portable across Indiggi.</p>
         </div>
         <div class="phlist">
           <div class="phrow"><div class="pri"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 13l4 4 10-11"/></svg></div><div><div class="pt">Identity verified</div><div class="ps">On-chain, since 2024</div></div></div>
@@ -726,7 +907,7 @@ body{background:#e9e6f3 !important;}
         <p class="obsub" style="margin-bottom:2px;">Start where you are. Move up anytime.</p>
         <div class="tier" onclick="pickTier(this,'Member')"><div class="radio"></div>
           <div class="tn"><span class="dot" style="background:var(--indigo)"></span>MEMBER</div>
-          <div class="td">You are in. The whole world of INDIGGI, and Karma from day one.</div>
+          <div class="td">You are in. The whole world of Indiggi, and Karma from day one.</div>
           <div class="ul">Unlocks</div>
           <div class="uk"><span class="ck">✓</span> KAI across money, giving, rewards, schedule</div>
           <div class="uk"><span class="ck">✓</span> Karma on everyday spend, and a seat in The Circle</div>
@@ -753,7 +934,7 @@ body{background:#e9e6f3 !important;}
       <!-- ===== Onboarding: intro (Life Intel) ===== -->
       <section class="screen active" id="ob-intro">
         <div class="ob">
-          <div class="khd"><div class="me2" style="background:var(--grad)">K</div><span class="lab" style="color:var(--ink);font-size:14px;letter-spacing:0;">Life Intel</span></div>
+          <div class="khd"><svg class="logomark" width="30" height="30" viewBox="0 0 100 100"><g fill="url(#igGrad)"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g></svg><span class="wordmark grad" style="font-size:20px;">Indiggi</span></div>
           <span class="obeye">A verified culture</span>
           <div class="obtitle">Let's set up your Life Intel.</div>
           <p class="obsub">KAI learns how you actually move, so it can move for you. Two minutes, mostly just talking. And you get verified, so everything here is real.</p>
@@ -854,7 +1035,7 @@ body{background:#e9e6f3 !important;}
             <div class="tags"><span class="tg">Rooftop energy</span><span class="tg">Live sets</span><span class="tg">Chef's counters</span><span class="tg">Creative crowd</span><span class="tg">Your circle close</span></div>
           </div>
           <p class="obsub" style="text-align:center;margin-top:18px;">This is yours. See it, change it, take it with you, anytime.</p>
-          <button class="btn" onclick="go('kai')">Enter INDIGGI</button>
+          <button class="btn" onclick="go('home')">Enter Indiggi</button>
         </div>
       </section>
 
@@ -881,7 +1062,7 @@ body{background:#e9e6f3 !important;}
           <div class="person"><div class="pc" style="background:var(--grad-jade)">J</div><div class="pn">Jré</div></div>
           <div class="person"><div class="pc" style="background:var(--grad-cobalt)">D</div><div class="pn">Dom</div></div>
         </div>
-        <div class="kaimsg" style="margin-top:16px;"><span class="kk">K</span><p>Split four ways, that is <b>$85.00</b> each. I can text a request with your INDIGGI pay link.</p></div>
+        <div class="kaimsg" style="margin-top:16px;"><span class="kk">K</span><p>Split four ways, that is <b>$85.00</b> each. I can text a request with your Indiggi pay link.</p></div>
         <button class="btn cob" onclick="toast('✓ 3 requests sent · $255 incoming')">Send 3 requests</button>
       </section>
 
@@ -1106,10 +1287,10 @@ body{background:#e9e6f3 !important;}
 
     <!-- ===== bottom nav ===== -->
     <div class="tabbar">
+      <div class="t" data-tab="home" onclick="go('home')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 11l8-6 8 6v8a1 1 0 01-1 1h-4v-6h-6v6H5a1 1 0 01-1-1z"/></svg>Home</div>
+      <div class="t" data-tab="money" onclick="go('wallet')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg>Wallet</div>
       <div class="t on" data-tab="kai" onclick="go('kai')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>KAI</div>
-      <div class="t" data-tab="money" onclick="go('wallet')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg>Money</div>
       <div class="t" data-tab="karma" onclick="go('rewards')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16l-5.4 3 1.2-6L3.3 9.3l6.1-.7z"/></svg>Karma</div>
-      <div class="t" data-tab="schedule" onclick="go('schedule')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>Schedule</div>
       <div class="t" onclick="openD()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</div>
     </div>
 
@@ -1117,11 +1298,16 @@ body{background:#e9e6f3 !important;}
     <div class="scrim" id="scrim" onclick="closeD()"></div>
     <div class="drawer" id="drawer">
       <div class="dhead">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;opacity:.95;">
+          <svg width="24" height="24" viewBox="0 0 100 100"><g fill="#fff"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g></svg>
+          <span style="font-weight:800;letter-spacing:-1px;font-size:19px;">Indiggi</span>
+        </div>
         <div class="av2">T</div>
         <div class="nm">Ty <span class="vf">● <b>VERIFIED</b></span></div>
         <div class="meta">Los Angeles · Tastemaker · 18,240 Karma</div>
       </div>
       <div class="dlist">
+        <div class="ditem" onclick="nav('home')"><div class="mi" style="background:var(--t-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2"><path d="M4 11l8-6 8 6v8a1 1 0 01-1 1h-4v-6h-6v6H5a1 1 0 01-1-1z"/></svg></div><div class="dtxt"><div class="dt">Home</div><div class="ds">Your world, today</div></div></div>
         <div class="ditem" onclick="nav('kai')"><div class="mi" style="background:var(--t-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></div><div class="dtxt"><div class="dt">KAI</div><div class="ds">Your home, your life intelligence</div></div></div>
         <div class="ditem" onclick="nav('wallet')"><div class="mi" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></div><div class="dtxt"><div class="dt">Money Life</div><div class="ds">INCard, balance, assets</div></div></div>
         <div class="ditem" onclick="nav('rewards')"><div class="mi" style="background:var(--t-amber)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16l-5.4 3 1.2-6L3.3 9.3l6.1-.7z"/></svg></div><div class="dtxt"><div class="dt">Karma</div><div class="ds">Two kinds of giving, plus perks</div></div></div>
@@ -1141,10 +1327,13 @@ body{background:#e9e6f3 !important;}
   </div><!-- /app -->
 </div><!-- /device -->
 
-<div class="foot">INDIGGI International Holdings · <b>Culture is the new technology</b></div>
+<div class="foot" style="display:flex;align-items:center;justify-content:center;gap:8px;">
+  <svg class="logomark" width="16" height="16" viewBox="0 0 100 100" style="opacity:.8;"><g fill="var(--ink)"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g></svg>
+  <span>Indiggi International Holdings · <b>Culture is the new technology</b></span>
+</div>
 
 <script>
-var tabFor={kai:'kai','r-savings':'kai','r-gift':'kai',creator:'kai',wallet:'money',rewards:'karma',giving:'karma',schedule:'schedule',
+var tabFor={home:'home',kai:'kai','r-savings':'kai','r-gift':'kai',creator:'kai',wallet:'money',rewards:'karma',giving:'karma',schedule:'schedule',
   'qm-cancel':'kai','qm-split':'kai','qm-remind':'kai','qm-crypto':'kai','qm-tip':'kai','qm-all':'kai',
   'mv-move':'money','mv-freeze':'money','mv-pay':'money','frac':'money','circle':'karma'};
 var chromeless={'ob-intro':1,'ob-name':1,'ob-scene':1,'ob-taste':1,'ob-verify':1,'ob-review':1,'ob-done':1};
@@ -1170,6 +1359,7 @@ function pickTier(el,name){document.querySelectorAll('.tier').forEach(function(l
 function askDay(){var c=document.getElementById('kai-convo');c.style.display='block';c.scrollIntoView({behavior:'smooth',block:'nearest'});}
 function pickAmt(el){var p=el.parentNode;p.querySelectorAll('.amt-chip').forEach(function(a){a.classList.remove('on');});el.classList.add('on');}
 function pickSel(el){var p=el.parentNode;p.querySelectorAll('.selrow').forEach(function(a){a.classList.remove('on');});el.classList.add('on');}
+function tog(id){var b=document.getElementById(id),e=event.currentTarget;if(b.dataset.shown){b.textContent='$ ••••••';delete b.dataset.shown;if(e)e.textContent='Show';}else{b.textContent=b.dataset.v;b.dataset.shown='1';if(e)e.textContent='Hide';}}
 (function(){var h=(location.hash||'').replace('#','');if(h&&document.getElementById(h)){go(h,true);}else{go('ob-intro',true);}})();
 </script>
 </body></html>
