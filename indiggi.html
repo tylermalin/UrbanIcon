@@ -515,14 +515,8 @@ body{background:#e9e6f3 !important;}
 </style></head><body>
 
 <div class="head">
-  <div class="logo-row">
-    <svg class="logomark" width="40" height="40" viewBox="0 0 100 100">
-      <defs><linearGradient id="igGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7B3FE4"/><stop offset="1" stop-color="#E0457B"/></linearGradient></defs>
-      <g fill="url(#igGrad)"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g>
-    </svg>
-    <span class="wordmark grad">Indiggi</span>
-  </div>
-  <p style="margin-top:8px;">Culture is the new technology</p>
+  <img src="logo.svg" alt="Indiggi" style="height:42px;display:block;margin:0 auto;">
+  <p style="margin-top:12px;">Culture is the new technology</p>
 </div>
 <div class="hint">A click-through demo — tap the <b>bottom nav</b> and the <b>Menu</b> to move through the app.</div>
 
@@ -543,7 +537,7 @@ body{background:#e9e6f3 !important;}
       <section class="screen" id="home">
         <div class="khd">
           <div class="menu" onclick="openD()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
-          <svg class="logomark" width="26" height="26" viewBox="0 0 100 100" style="flex:1;max-width:26px;"><g fill="url(#igGrad)"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g></svg>
+          <img src="logo-mark.svg" alt="Indiggi" style="height:24px;flex:1;max-width:24px;object-fit:contain;">
           <span class="lab" style="flex:1;">Superfan</span>
           <div class="me2">T<span class="on2"></span></div>
         </div>
@@ -561,7 +555,7 @@ body{background:#e9e6f3 !important;}
 
         <div class="rowhdr"><h3>Happening Tonight</h3></div>
         <div class="evt" onclick="go('map-tonight')">
-          <div class="bg"></div><div class="ov"></div>
+          <div class="bg" style="background:url('assets/rooftop.jpg') center/cover no-repeat, linear-gradient(160deg,#5B2AAE,#3a1f6e 55%,#152344);"></div><div class="ov"></div>
           <span class="vip">VIP</span>
           <span class="heart">♥</span>
           <div class="z">
@@ -934,7 +928,7 @@ body{background:#e9e6f3 !important;}
       <!-- ===== Onboarding: intro (Life Intel) ===== -->
       <section class="screen active" id="ob-intro">
         <div class="ob">
-          <div class="khd"><svg class="logomark" width="30" height="30" viewBox="0 0 100 100"><g fill="url(#igGrad)"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g></svg><span class="wordmark grad" style="font-size:20px;">Indiggi</span></div>
+          <div class="khd"><img src="logo.svg" alt="Indiggi" style="height:30px;"></div>
           <span class="obeye">A verified culture</span>
           <div class="obtitle">Let's set up your Life Intel.</div>
           <p class="obsub">KAI learns how you actually move, so it can move for you. Two minutes, mostly just talking. And you get verified, so everything here is real.</p>
@@ -1200,8 +1194,8 @@ body{background:#e9e6f3 !important;}
       <section class="screen" id="map-tonight">
         <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Tonight</h2></div>
         <span class="eyebrow eb-cobalt">Concierge · In your scene</span>
-        <div class="eventcard" style="background:var(--grad);"><span class="etag">IN YOUR SCENE</span><div class="et">Rooftop set · Arts District</div><div class="ed">9:00 PM · live sets, your crowd</div></div>
-        <div class="eventcard" style="background:var(--grad-clay);"><span class="etag">8 SEATS LEFT</span><div class="et">Chef's counter · Mirame</div><div class="ed">8:00 PM · held if you want it</div></div>
+        <div class="eventcard" style="background:linear-gradient(rgba(18,10,40,.3),rgba(18,10,40,.75)), url('assets/rooftop.jpg') center/cover no-repeat, var(--grad);"><span class="etag">IN YOUR SCENE</span><div class="et">Rooftop set · Arts District</div><div class="ed">9:00 PM · live sets, your crowd</div></div>
+        <div class="eventcard" style="background:linear-gradient(rgba(30,15,8,.34),rgba(30,15,8,.72)), url('assets/chefs-counter.jpg') center/cover no-repeat, var(--grad-clay);"><span class="etag">8 SEATS LEFT</span><div class="et">Chef's counter · Mírame</div><div class="ed">8:00 PM · held if you want it</div></div>
         <div class="eventcard" style="background:var(--grad-jade);"><span class="etag">INVITE ONLY</span><div class="et">After-hours · The Loft</div><div class="ed">11:00 PM · your circle is going</div></div>
         <div class="kaimsg" style="margin-top:16px;"><span class="kk">K</span><p>I can hold the chef's counter and time a ride from your 8pm dinner. Want me to line it up?</p></div>
         <button class="btn cob" onclick="go('schedule')">Ask KAI to plan it</button>
@@ -1246,7 +1240,7 @@ body{background:#e9e6f3 !important;}
       <section class="screen" id="cr-drops">
         <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Drops</h2></div>
         <span class="eyebrow eb-clay">Launch products, tickets, and content</span>
-        <div class="rowval"><div class="l"><div class="ic" style="background:#ffe1e1;color:#C0392B">●</div><div><div class="nm">Vinyl reissue</div><div class="sb">Live · 240 of 500 sold</div></div></div><span class="dn" style="font-size:11px;font-weight:800;">LIVE</span></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:url('assets/vinyl.jpg') center/cover no-repeat, var(--t-clay);"></div><div><div class="nm">Vinyl reissue</div><div class="sb">Live · 240 of 500 sold</div></div></div><span class="dn" style="font-size:11px;font-weight:800;">LIVE</span></div>
         <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-cobalt);color:var(--cobalt)">◷</div><div><div class="nm">Tee capsule</div><div class="sb">Scheduled · Friday 12pm</div></div></div><span style="font-size:11px;font-weight:800;color:var(--grey)">Queued</span></div>
         <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--soft);color:var(--grey)">✎</div><div><div class="nm">New track</div><div class="sb">Draft · not scheduled</div></div></div><span style="font-size:11px;font-weight:800;color:var(--grey)">Draft</span></div>
         <button class="btn" onclick="toast('Set up a new drop')">New drop</button>
@@ -1298,10 +1292,8 @@ body{background:#e9e6f3 !important;}
     <div class="scrim" id="scrim" onclick="closeD()"></div>
     <div class="drawer" id="drawer">
       <div class="dhead">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;opacity:.95;">
-          <svg width="24" height="24" viewBox="0 0 100 100"><g fill="#fff"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g></svg>
-          <span style="font-weight:800;letter-spacing:-1px;font-size:19px;">Indiggi</span>
-        </div>
+        <img src="logo.svg" alt="Indiggi" style="height:26px;margin-bottom:18px;filter:brightness(0) invert(1);opacity:.96;">
+
         <div class="av2">T</div>
         <div class="nm">Ty <span class="vf">● <b>VERIFIED</b></span></div>
         <div class="meta">Los Angeles · Tastemaker · 18,240 Karma</div>
@@ -1309,7 +1301,7 @@ body{background:#e9e6f3 !important;}
       <div class="dlist">
         <div class="ditem" onclick="nav('home')"><div class="mi" style="background:var(--t-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2"><path d="M4 11l8-6 8 6v8a1 1 0 01-1 1h-4v-6h-6v6H5a1 1 0 01-1-1z"/></svg></div><div class="dtxt"><div class="dt">Home</div><div class="ds">Your world, today</div></div></div>
         <div class="ditem" onclick="nav('kai')"><div class="mi" style="background:var(--t-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></div><div class="dtxt"><div class="dt">KAI</div><div class="ds">Your home, your life intelligence</div></div></div>
-        <div class="ditem" onclick="nav('wallet')"><div class="mi" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></div><div class="dtxt"><div class="dt">Money Life</div><div class="ds">INCard, balance, assets</div></div></div>
+        <div class="ditem" onclick="nav('wallet')"><div class="mi" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></div><div class="dtxt"><div class="dt">Wallet</div><div class="ds">Daily spending &amp; investments</div></div></div>
         <div class="ditem" onclick="nav('rewards')"><div class="mi" style="background:var(--t-amber)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16l-5.4 3 1.2-6L3.3 9.3l6.1-.7z"/></svg></div><div class="dtxt"><div class="dt">Karma</div><div class="ds">Two kinds of giving, plus perks</div></div></div>
         <div class="ditem" onclick="nav('giving')"><div class="mi" style="background:var(--t-jade)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 15.5 12 20 12 20z"/></svg></div><div class="dtxt"><div class="dt">Giving</div><div class="ds">Your church and causes</div></div></div>
         <div class="ditem" onclick="nav('schedule')"><div class="mi" style="background:var(--t-cobalt)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></div><div class="dtxt"><div class="dt">Schedule / My Day</div><div class="ds">Today, managed by KAI</div></div></div>
@@ -1327,8 +1319,8 @@ body{background:#e9e6f3 !important;}
   </div><!-- /app -->
 </div><!-- /device -->
 
-<div class="foot" style="display:flex;align-items:center;justify-content:center;gap:8px;">
-  <svg class="logomark" width="16" height="16" viewBox="0 0 100 100" style="opacity:.8;"><g fill="var(--ink)"><polygon points="14,84 62,84 62,40"/><rect x="30" y="8" width="20" height="20" rx="1.5"/><rect x="44" y="8" width="18" height="86" rx="2"/></g></svg>
+<div class="foot" style="display:flex;align-items:center;justify-content:center;gap:9px;">
+  <img src="logo-mark.svg" alt="" style="height:16px;opacity:.85;">
   <span>Indiggi International Holdings · <b>Culture is the new technology</b></span>
 </div>
 
