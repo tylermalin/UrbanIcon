@@ -512,6 +512,10 @@ body{background:#e9e6f3 !important;}
 .vault2 .vsub{font-size:11.5px;color:var(--grey);font-weight:600;}
 .vault2 .vtag{font-size:9px;font-weight:800;letter-spacing:.5px;color:var(--jade);background:var(--t-jade);padding:3px 8px;border-radius:10px;margin-left:8px;}
 .wadd{font-size:12px;font-weight:800;color:var(--purple);margin-top:10px;cursor:pointer;}
+/* embed mode: show only the device (for landing-page iframes) */
+body.embed{display:block;padding:0;background:transparent;min-height:0;}
+body.embed .head,body.embed .hint,body.embed .foot{display:none;}
+body.embed .device{margin:0;}
 </style></head><body>
 
 <div class="head">
@@ -1352,6 +1356,7 @@ function askDay(){var c=document.getElementById('kai-convo');c.style.display='bl
 function pickAmt(el){var p=el.parentNode;p.querySelectorAll('.amt-chip').forEach(function(a){a.classList.remove('on');});el.classList.add('on');}
 function pickSel(el){var p=el.parentNode;p.querySelectorAll('.selrow').forEach(function(a){a.classList.remove('on');});el.classList.add('on');}
 function tog(id){var b=document.getElementById(id),e=event.currentTarget;if(b.dataset.shown){b.textContent='$ ••••••';delete b.dataset.shown;if(e)e.textContent='Show';}else{b.textContent=b.dataset.v;b.dataset.shown='1';if(e)e.textContent='Hide';}}
+if(location.search.indexOf('embed')>=0)document.body.classList.add('embed');
 (function(){var h=(location.hash||'').replace('#','');if(h&&document.getElementById(h)){go(h,true);}else{go('ob-intro',true);}})();
 </script>
 </body></html>
