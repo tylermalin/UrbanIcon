@@ -298,6 +298,41 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
 /* chromeless (onboarding hides tab bar) */
 .device.chromeless .tabbar{display:none;}
 .device.chromeless .screens{bottom:0;}
+
+/* detail screens */
+.xbtn{background:#fff;color:#C0392B;border:1.5px solid #eab5ad;font-size:13px;font-weight:800;padding:9px 14px;border-radius:20px;cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.up{color:var(--jade);font-weight:800;}
+.dn{color:#C0392B;font-weight:800;}
+.stat2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.stat{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:14px;}
+.stat .k{font-size:11px;color:var(--grey);font-weight:700;}
+.stat .v{font-size:20px;font-weight:900;margin-top:3px;font-variant-numeric:tabular-nums;}
+.stat .t{font-size:11px;font-weight:800;margin-top:2px;}
+.amts{display:flex;gap:8px;margin-top:14px;}
+.amt-chip{flex:1;text-align:center;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:13px 4px;font-weight:800;font-size:15px;cursor:pointer;color:var(--ink);}
+.amt-chip.on{background:var(--indigo);color:#fff;border-color:transparent;}
+.rowval{display:flex;justify-content:space-between;align-items:center;padding:13px 2px;border-bottom:1px solid var(--line);}
+.rowval .l{display:flex;align-items:center;gap:11px;min-width:0;}
+.rowval .ic{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0;}
+.rowval .nm{font-size:14px;font-weight:800;}
+.rowval .sb{font-size:11.5px;color:var(--grey);margin-top:1px;}
+.rowval .rt{text-align:right;flex-shrink:0;}
+.rowval .vv{font-size:14px;font-weight:900;font-variant-numeric:tabular-nums;}
+.selrow{cursor:pointer;border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:10px;display:flex;align-items:center;gap:11px;}
+.selrow.on{border-color:var(--indigo);background:var(--t-indigo);}
+.selrow .rad{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);margin-left:auto;flex-shrink:0;}
+.selrow.on .rad{border-color:var(--indigo);background:radial-gradient(circle,var(--indigo) 0 5px,#fff 6px);}
+.paybox{border:2px dashed #c4bcd6;border-radius:20px;padding:26px;text-align:center;margin-top:14px;}
+.qrbox{width:150px;height:150px;margin:0 auto 14px;border-radius:12px;background:repeating-conic-gradient(#1D1330 0 90deg,#fff 0 180deg) 0 0/22px 22px;border:7px solid #1D1330;}
+.persons{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;}
+.person{display:flex;flex-direction:column;align-items:center;width:58px;cursor:pointer;}
+.person .pc{width:48px;height:48px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;}
+.person .pn{font-size:10.5px;font-weight:700;margin-top:5px;text-align:center;}
+.eventcard{border-radius:18px;padding:16px;color:#fff;margin-top:12px;position:relative;overflow:hidden;cursor:pointer;}
+.eventcard .etag{position:absolute;top:13px;right:13px;background:rgba(255,255,255,.25);font-size:9px;font-weight:800;padding:3px 8px;border-radius:10px;letter-spacing:.5px;}
+.eventcard .et{font-size:17px;font-weight:900;padding-right:104px;line-height:1.2;}
+.eventcard .ed{font-size:12px;opacity:.92;margin-top:3px;}
+.frozen{filter:grayscale(.55) brightness(.92);}
 </style></head><body>
 
 <div class="head">
@@ -306,7 +341,7 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
 </div>
 <div class="hint">Tap the <b>bottom nav</b> and the <b>Menu</b> to move through the app.</div>
 
-<div class="device">
+<div class="device chromeless">
   <div class="island"></div>
   <div class="app">
     <div class="statusbar">
@@ -320,7 +355,7 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
     <div class="screens">
 
       <!-- ===== KAI (home) ===== -->
-      <section class="screen active" id="kai">
+      <section class="screen" id="kai">
         <div class="khd">
           <div class="menu" onclick="openD()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
           <span class="lab">KAI · Life Intelligence</span>
@@ -330,14 +365,16 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
           <div class="orb"><div class="eq"><i></i><i></i><i></i><i></i><i></i></div></div>
           <div><h3>Hi Ty.</h3><p>I circle your whole life. Ask me anything, or tap a move.</p></div>
         </div>
-        <div class="bubble ka">Good morning, Ty. Your day is light until 2, savings auto move runs today, and your church gift is queued for Sunday. Want me to handle any of it now?</div>
-        <div class="bubble me">What's my day?</div>
-        <div class="bubble ka">Light until 2, Ty. Cut at 9:30 is done, ride is timed to your 2pm studio session, and I am holding dinner at 8 for four.</div>
-        <button class="btn" onclick="go('schedule')">Open My Day</button>
+        <div id="kai-convo" style="display:none;">
+          <div class="bubble ka">Good morning, Ty. Your day is light until 2, savings auto move runs today, and your church gift is queued for Sunday. Want me to handle any of it now?</div>
+          <div class="bubble me">What's my day?</div>
+          <div class="bubble ka">Light until 2, Ty. Cut at 9:30 is done, ride is timed to your 2pm studio session, and I am holding dinner at 8 for four.</div>
+          <button class="btn" onclick="go('schedule')">Open My Day</button>
+        </div>
 
         <div class="lbl2">Try these</div>
         <div class="trychips">
-          <span class="trychip" onclick="go('schedule')">What's my day?</span>
+          <span class="trychip" onclick="askDay()">What's my day?</span>
           <span class="trychip" onclick="go('r-savings')">Move $50 to savings</span>
           <span class="trychip" onclick="go('r-gift')">Give $25 to my church</span>
           <span class="trychip" onclick="go('rewards')">How many Karma points?</span>
@@ -346,12 +383,12 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
 
         <div class="lbl2">Quick moves KAI can do</div>
         <div class="qmoves">
-          <div class="qmove" onclick="toast('Subscription cancelled')"><div class="qi" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg></div><div class="ql">Cancel a sub</div></div>
-          <div class="qmove" onclick="toast('Bill split 4 ways')"><div class="qi" style="background:var(--t-cobalt)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="2"><path d="M12 3v18M4 8h16M4 16h16"/></svg></div><div class="ql">Split a bill</div></div>
-          <div class="qmove" onclick="toast('Reminder set')"><div class="qi" style="background:var(--t-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="ql">Set reminder</div></div>
-          <div class="qmove" onclick="go('wallet')"><div class="qi" style="background:var(--t-amber)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M4 18l5-6 4 3 6-8"/><path d="M4 20h16"/></svg></div><div class="ql">Check crypto</div></div>
-          <div class="qmove" onclick="toast('Tip sent · +10 Karma')"><div class="qi" style="background:var(--t-jade)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2"><path d="M12 2v20M8 6h6a3 3 0 010 6H9a3 3 0 000 6h7"/></svg></div><div class="ql">Tip someone</div></div>
-          <div class="qmove" onclick="openD()"><div class="qi" style="background:var(--soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="2"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></div><div class="ql">All of life</div></div>
+          <div class="qmove" onclick="go('qm-cancel')"><div class="qi" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg></div><div class="ql">Cancel a sub</div></div>
+          <div class="qmove" onclick="go('qm-split')"><div class="qi" style="background:var(--t-cobalt)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="2"><path d="M12 3v18M4 8h16M4 16h16"/></svg></div><div class="ql">Split a bill</div></div>
+          <div class="qmove" onclick="go('qm-remind')"><div class="qi" style="background:var(--t-indigo)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="ql">Set reminder</div></div>
+          <div class="qmove" onclick="go('qm-crypto')"><div class="qi" style="background:var(--t-amber)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M4 18l5-6 4 3 6-8"/><path d="M4 20h16"/></svg></div><div class="ql">Check crypto</div></div>
+          <div class="qmove" onclick="go('qm-tip')"><div class="qi" style="background:var(--t-jade)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2"><path d="M12 2v20M8 6h6a3 3 0 010 6H9a3 3 0 000 6h7"/></svg></div><div class="ql">Tip someone</div></div>
+          <div class="qmove" onclick="go('qm-all')"><div class="qi" style="background:var(--soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--grey)" stroke-width="2"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></div><div class="ql">All of life</div></div>
         </div>
       </section>
 
@@ -423,9 +460,9 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
         </div>
 
         <div class="acts">
-          <div class="act" onclick="toast('Move money — pick a destination')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="al">Move money</div></div>
-          <div class="act" onclick="toast('❄ Card frozen')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9"/></svg></div><div class="al">Freeze</div></div>
-          <div class="act" onclick="toast('Ready to pay — tap to hold')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10h18"/></svg></div><div class="al">Pay</div></div>
+          <div class="act" onclick="go('mv-move')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="al">Move money</div></div>
+          <div class="act" onclick="go('mv-freeze')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9"/></svg></div><div class="al">Freeze</div></div>
+          <div class="act" onclick="go('mv-pay')"><div class="ai"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10h18"/></svg></div><div class="al">Pay</div></div>
         </div>
 
         <div class="kaimsg">
@@ -433,11 +470,11 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
           <p>I moved $50 to savings this morning like you asked. You are <b>$180</b> from your Essence Fest travel goal.</p>
         </div>
 
-        <div class="rowhdr"><h3>Fractionalization Suite</h3><a onclick="toast('Opening full suite…')">See all</a></div>
+        <div class="rowhdr"><h3>Fractionalization Suite</h3><a onclick="go('frac')">See all</a></div>
         <p style="font-size:12.5px;color:var(--grey);">Own a slice of real assets, from a dollar.</p>
         <div class="frac">
-          <div class="fcard" onclick="toast('View asset · Culture Fund')"><div class="fn">Culture Fund</div><div class="fp">Creator equity index</div><div class="fv">$1,240 <small>+8.2%</small></div></div>
-          <div class="fcard" onclick="toast('View asset · Bricks LA')"><div class="fn">Bricks LA</div><div class="fp">Fractional real estate</div><div class="fv">$860 <small>+3.4%</small></div></div>
+          <div class="fcard" onclick="go('frac')"><div class="fn">Culture Fund</div><div class="fp">Creator equity index</div><div class="fv">$1,240 <small>+8.2%</small></div></div>
+          <div class="fcard" onclick="go('frac')"><div class="fn">Bricks LA</div><div class="fp">Fractional real estate</div><div class="fv">$860 <small>+3.4%</small></div></div>
         </div>
       </section>
 
@@ -461,7 +498,7 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
           <span class="eb">The Circle</span>
           <p style="margin-top:8px;">Every purchase adds to The Circle, our community giving pool. You are never giving alone. We move together.</p>
           <div class="inner">The Circle has given <b>248,000 Karma</b> to community causes this month. You are part of it.</div>
-          <button class="btn white" onclick="toast('Opening The Circle…')">See The Circle</button>
+          <button class="btn white" onclick="go('circle')">See The Circle</button>
         </div>
 
         <div class="hero jade" style="margin-top:14px;">
@@ -523,12 +560,12 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
         </div>
 
         <div class="gtiles">
-          <div class="gtile" onclick="toast('Audience — 12,480 followers')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 8.5a3 3 0 010 5M18 20c0-2.4-1-3.8-2.5-4.6"/></svg></div><div class="gt">Audience</div><div class="gs">Who follows you, and how to reach them.</div></div>
-          <div class="gtile" onclick="toast('Rooms — 2 live now')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 10h16"/></svg></div><div class="gt">Rooms</div><div class="gs">Your spaces to gather, host, and go live.</div></div>
-          <div class="gtile" onclick="go('wallet')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v20M8 6h6a3 3 0 010 6H9a3 3 0 000 6h7"/></svg></div><div class="gt">Revenue</div><div class="gs">What you earn, in one clear place.</div></div>
-          <div class="gtile" onclick="toast('Drops — schedule your next release')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3l2 5 5 .5-4 3.5 1.2 5L12 19l-4.2 2 1.2-5-4-3.5 5-.5z"/></svg></div><div class="gt">Drops</div><div class="gs">Launch products, tickets, and content.</div></div>
-          <div class="gtile" onclick="toast('Insights — engagement up 14%')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 20V4M4 20h16M8 16l3-4 3 2 4-6"/></svg></div><div class="gt">Insights</div><div class="gs">What is working, and what to do next.</div></div>
-          <div class="gtile" onclick="go('kai')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></div><div class="gt">Ask KAI</div><div class="gs">Your co-pilot for the business side.</div></div>
+          <div class="gtile" onclick="go('cr-audience')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 8.5a3 3 0 010 5M18 20c0-2.4-1-3.8-2.5-4.6"/></svg></div><div class="gt">Audience</div><div class="gs">Who follows you, and how to reach them.</div></div>
+          <div class="gtile" onclick="go('cr-rooms')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 10h16"/></svg></div><div class="gt">Rooms</div><div class="gs">Your spaces to gather, host, and go live.</div></div>
+          <div class="gtile" onclick="go('cr-revenue')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v20M8 6h6a3 3 0 010 6H9a3 3 0 000 6h7"/></svg></div><div class="gt">Revenue</div><div class="gs">What you earn, in one clear place.</div></div>
+          <div class="gtile" onclick="go('cr-drops')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3l2 5 5 .5-4 3.5 1.2 5L12 19l-4.2 2 1.2-5-4-3.5 5-.5z"/></svg></div><div class="gt">Drops</div><div class="gs">Launch products, tickets, and content.</div></div>
+          <div class="gtile" onclick="go('cr-insights')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 20V4M4 20h16M8 16l3-4 3 2 4-6"/></svg></div><div class="gt">Insights</div><div class="gs">What is working, and what to do next.</div></div>
+          <div class="gtile" onclick="go('cr-askkai')"><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></div><div class="gt">Ask KAI</div><div class="gs">Your co-pilot for the business side.</div></div>
         </div>
       </section>
 
@@ -558,7 +595,7 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
           <div class="pi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg></div>
           <h3>The Map</h3><div class="tag">Concierge · The inside track</div>
           <p>Where the culture is right now. Rooms, drops, and nights KAI thinks are your scene.</p>
-          <button class="btn" onclick="toast('Finding your scene tonight…')">Show me tonight</button>
+          <button class="btn" onclick="go('map-tonight')">Show me tonight</button>
         </div>
       </section>
 
@@ -618,7 +655,7 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
       </section>
 
       <!-- ===== Onboarding: intro (Life Intel) ===== -->
-      <section class="screen" id="ob-intro">
+      <section class="screen active" id="ob-intro">
         <div class="ob">
           <div class="khd"><div class="me2" style="background:var(--grad)">K</div><span class="lab" style="color:var(--ink);font-size:14px;letter-spacing:0;">Life Intel</span></div>
           <span class="obeye">A verified culture</span>
@@ -725,6 +762,250 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
         </div>
       </section>
 
+      <!-- ===== Quick move: Cancel a sub ===== -->
+      <section class="screen" id="qm-cancel">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Cancel a sub</h2></div>
+        <span class="eyebrow eb-clay">Quick move · KAI</span>
+        <div class="daymsg"><span class="kk">K</span><p>I found <b>6 subscriptions</b>, $128/mo total. Three you have barely touched lately.</p></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-clay);color:var(--clay)">▶</div><div><div class="nm">StreamMax</div><div class="sb">$17.99/mo · last used 2 months ago</div></div></div><button class="xbtn" onclick="toast('StreamMax cancelled · saving $17.99/mo')">Cancel</button></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-cobalt);color:var(--cobalt)">☁</div><div><div class="nm">Cloud 2TB</div><div class="sb">$9.99/mo · 4% full</div></div></div><button class="xbtn" onclick="toast('Cloud 2TB cancelled · saving $9.99/mo')">Cancel</button></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-amber);color:var(--amber)">◎</div><div><div class="nm">Gym+</div><div class="sb">$45.00/mo · last visit 6 weeks ago</div></div></div><button class="xbtn" onclick="toast('Gym+ cancelled · saving $45/mo')">Cancel</button></div>
+        <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--t-jade);color:var(--jade)">♪</div><div><div class="nm">Music Pro</div><div class="sb">$10.99/mo · used daily</div></div></div><span class="up" style="font-size:12px;">Keep</span></div>
+      </section>
+
+      <!-- ===== Quick move: Split a bill ===== -->
+      <section class="screen" id="qm-split">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Split a bill</h2></div>
+        <span class="eyebrow eb-cobalt">Quick move · KAI</span>
+        <div class="hero cobalt"><span class="lab">Latest charge</span><div class="big" style="font-size:34px;">$340.00</div><div class="note">Nobu Malibu · tonight</div></div>
+        <div class="rowhdr"><h3>Split with</h3><a onclick="toast('Add someone')">Add</a></div>
+        <div class="persons">
+          <div class="person"><div class="pc" style="background:var(--grad)">T</div><div class="pn">You</div></div>
+          <div class="person"><div class="pc" style="background:var(--grad-clay)">M</div><div class="pn">Maya</div></div>
+          <div class="person"><div class="pc" style="background:var(--grad-jade)">J</div><div class="pn">Jré</div></div>
+          <div class="person"><div class="pc" style="background:var(--grad-cobalt)">D</div><div class="pn">Dom</div></div>
+        </div>
+        <div class="kaimsg" style="margin-top:16px;"><span class="kk">K</span><p>Split four ways, that is <b>$85.00</b> each. I can text a request with your INDIGGI pay link.</p></div>
+        <button class="btn cob" onclick="toast('✓ 3 requests sent · $255 incoming')">Send 3 requests</button>
+      </section>
+
+      <!-- ===== Quick move: Set reminder ===== -->
+      <section class="screen" id="qm-remind">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Set reminder</h2></div>
+        <span class="eyebrow eb-indigo">Quick move · KAI</span>
+        <div class="field" style="margin-top:2px;"><div class="fk">Remind me to</div><input placeholder="Type it, or tap a suggestion"></div>
+        <div class="lbl2">KAI suggests</div>
+        <div class="trychips">
+          <span class="trychip" onclick="toast('Reminder set · Call mom Sunday')">Call mom Sunday</span>
+          <span class="trychip" onclick="toast('Reminder set · Pay rent on the 1st')">Pay rent on the 1st</span>
+          <span class="trychip" onclick="toast('Reminder set · Studio at 2')">Studio at 2</span>
+          <span class="trychip" onclick="toast('Reminder set · Renew passport')">Renew passport</span>
+        </div>
+        <div class="kaimsg" style="margin-top:18px;"><span class="kk">K</span><p>I will nudge you at the right moment, and hold it on your day so nothing slips.</p></div>
+        <button class="btn" onclick="toast('✓ Reminder set')">Set with KAI</button>
+      </section>
+
+      <!-- ===== Quick move: Check crypto ===== -->
+      <section class="screen" id="qm-crypto">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Check crypto</h2></div>
+        <span class="eyebrow eb-amber">Quick move · KAI</span>
+        <div class="hero amber"><span class="lab">Portfolio</span><div class="big">$3,410.22</div><div class="note">+$138.40 today · +4.2%</div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-amber);color:var(--amber)">₿</div><div><div class="nm">Bitcoin</div><div class="sb">0.031 BTC</div></div></div><div class="rt"><div class="vv">$2,100.00</div><div class="up" style="font-size:11.5px;">+2.1%</div></div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-indigo);color:var(--indigo)">Ξ</div><div><div class="nm">Ethereum</div><div class="sb">0.26 ETH</div></div></div><div class="rt"><div class="vv">$890.22</div><div class="up" style="font-size:11.5px;">+6.8%</div></div></div>
+        <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--t-jade);color:var(--jade)">◎</div><div><div class="nm">Solana</div><div class="sb">2.9 SOL</div></div></div><div class="rt"><div class="vv">$420.00</div><div class="dn" style="font-size:11.5px;">-1.3%</div></div></div>
+        <button class="btn" onclick="toast('Move crypto to INCard')">Move to INCard</button>
+      </section>
+
+      <!-- ===== Quick move: Tip someone ===== -->
+      <section class="screen" id="qm-tip">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Tip someone</h2></div>
+        <span class="eyebrow eb-jade">Quick move · KAI</span>
+        <div class="lbl2">Recent</div>
+        <div class="persons">
+          <div class="person"><div class="pc" style="background:var(--grad-clay)">B</div><div class="pn">Barber</div></div>
+          <div class="person"><div class="pc" style="background:var(--grad-jade)">V</div><div class="pn">Valet</div></div>
+          <div class="person"><div class="pc" style="background:var(--grad-cobalt)">DJ</div><div class="pn">DJ Ru</div></div>
+          <div class="person"><div class="pc" style="background:var(--grad)">S</div><div class="pn">Server</div></div>
+        </div>
+        <div class="lbl2">Amount</div>
+        <div class="amts"><span class="amt-chip" onclick="pickAmt(this)">$5</span><span class="amt-chip on" onclick="pickAmt(this)">$10</span><span class="amt-chip" onclick="pickAmt(this)">$20</span><span class="amt-chip" onclick="pickAmt(this)">$50</span></div>
+        <div class="kaimsg" style="margin-top:16px;"><span class="kk">K</span><p>Tips send instantly and earn you Karma back. This one is <b>+10 Karma</b>.</p></div>
+        <button class="btn jade" onclick="toast('✓ Tip sent · +10 Karma')">Send tip</button>
+      </section>
+
+      <!-- ===== Quick move: All of life ===== -->
+      <section class="screen" id="qm-all">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>All of life</h2></div>
+        <span class="eyebrow eb-indigo">Everything KAI can move</span>
+        <div class="gtiles">
+          <div class="gtile" onclick="go('wallet')"><div class="gi" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></div><div class="gt">Money Life</div><div class="gs">INCard, balance, assets.</div></div>
+          <div class="gtile" onclick="go('schedule')"><div class="gi" style="background:var(--t-cobalt)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></div><div class="gt">My Day</div><div class="gs">Your schedule, run by KAI.</div></div>
+          <div class="gtile" onclick="go('giving')"><div class="gi" style="background:var(--t-jade)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 15.5 12 20 12 20z"/></svg></div><div class="gt">Giving</div><div class="gs">Your church and causes.</div></div>
+          <div class="gtile" onclick="go('rewards')"><div class="gi" style="background:var(--t-amber)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16l-5.4 3 1.2-6L3.3 9.3l6.1-.7z"/></svg></div><div class="gt">Karma</div><div class="gs">Giving, perks, The Circle.</div></div>
+          <div class="gtile" onclick="go('map')"><div class="gi" style="background:var(--t-cobalt)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--cobalt)" stroke-width="2"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg></div><div class="gt">The Map</div><div class="gs">Concierge, the inside track.</div></div>
+          <div class="gtile" onclick="go('creator')"><div class="gi" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div><div class="gt">Creator OS</div><div class="gs">Audience, rooms, revenue.</div></div>
+        </div>
+      </section>
+
+      <!-- ===== Money: Move money ===== -->
+      <section class="screen" id="mv-move">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Move money</h2></div>
+        <span class="eyebrow eb-clay">From INCard · $4,820.60 available</span>
+        <div class="lbl2">Move to</div>
+        <div class="selrow on" onclick="pickSel(this)"><div class="ic" style="background:var(--t-clay);color:var(--clay);width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:900;">S</div><div><div class="nm" style="font-size:14px;font-weight:800;">Savings vault</div><div class="sb" style="font-size:11.5px;color:var(--grey);">$1,240 · goal $2,000</div></div><div class="rad"></div></div>
+        <div class="selrow" onclick="pickSel(this)"><div class="ic" style="background:var(--t-amber);color:var(--amber);width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:900;">✈</div><div><div class="nm" style="font-size:14px;font-weight:800;">Essence Fest trip</div><div class="sb" style="font-size:11.5px;color:var(--grey);">$820 · $180 to go</div></div><div class="rad"></div></div>
+        <div class="selrow" onclick="pickSel(this)"><div class="ic" style="background:var(--t-jade);color:var(--jade);width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:900;">+</div><div><div class="nm" style="font-size:14px;font-weight:800;">Someone new</div><div class="sb" style="font-size:11.5px;color:var(--grey);">Send to a person or cause</div></div><div class="rad"></div></div>
+        <div class="lbl2">Amount</div>
+        <div class="amts"><span class="amt-chip" onclick="pickAmt(this)">$50</span><span class="amt-chip on" onclick="pickAmt(this)">$100</span><span class="amt-chip" onclick="pickAmt(this)">$250</span><span class="amt-chip" onclick="pickAmt(this)">$500</span></div>
+        <button class="btn" onclick="go('r-savings')">Move money</button>
+      </section>
+
+      <!-- ===== Money: Freeze ===== -->
+      <section class="screen" id="mv-freeze">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Freeze card</h2></div>
+        <div class="incard frozen">
+          <div><div class="chip"></div><span class="founders">Founders</span></div>
+          <div class="inlogo">in</div>
+          <div class="row"><span class="no">•••• 4820</span><span class="visa">VISA</span></div>
+        </div>
+        <div class="kaimsg" style="margin-top:16px;"><span class="kk">K</span><p>Your INCard is <b>frozen</b>. No new charges will go through, and Apple Pay is paused. Your subscriptions still run.</p></div>
+        <button class="btn" onclick="toast('✓ Card unfrozen')">Unfreeze card</button>
+        <button class="btn ghost" onclick="toast('Reported · new card on the way')">Report lost or stolen</button>
+      </section>
+
+      <!-- ===== Money: Pay ===== -->
+      <section class="screen" id="mv-pay">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Pay</h2></div>
+        <div class="paybox">
+          <div class="qrbox"></div>
+          <div style="font-size:15px;font-weight:800;">Hold near the reader</div>
+          <div style="font-size:12px;color:var(--grey);margin-top:4px;">or let someone scan your code</div>
+        </div>
+        <div class="lbl2">Recent</div>
+        <div class="persons">
+          <div class="person"><div class="pc" style="background:var(--grad-clay)">N</div><div class="pn">Nobu</div></div>
+          <div class="person"><div class="pc" style="background:var(--grad-jade)">C</div><div class="pn">Cafe</div></div>
+          <div class="person"><div class="pc" style="background:var(--grad-cobalt)">L</div><div class="pn">Level Up</div></div>
+        </div>
+        <button class="btn cob" onclick="toast('Ready · hold near the reader')">Pay with INCard</button>
+      </section>
+
+      <!-- ===== Money: Fractionalization Suite ===== -->
+      <section class="screen" id="frac">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Fractionalization Suite</h2></div>
+        <span class="eyebrow eb-cobalt">Own a slice of real assets, from a dollar</span>
+        <div class="hero cobalt"><span class="lab">Your portfolio</span><div class="big">$3,240.00</div><div class="note">+$186 this month · +6.1%</div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-indigo);color:var(--indigo)">◈</div><div><div class="nm">Culture Fund</div><div class="sb">Creator equity index</div></div></div><div class="rt"><div class="vv">$1,240</div><div class="up" style="font-size:11.5px;">+8.2%</div></div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-clay);color:var(--clay)">⌂</div><div><div class="nm">Bricks LA</div><div class="sb">Fractional real estate</div></div></div><div class="rt"><div class="vv">$860</div><div class="up" style="font-size:11.5px;">+3.4%</div></div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-amber);color:var(--amber)">♪</div><div><div class="nm">Vinyl Vault</div><div class="sb">Rare pressings</div></div></div><div class="rt"><div class="vv">$420</div><div class="up" style="font-size:11.5px;">+12%</div></div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-jade);color:var(--jade)">◎</div><div><div class="nm">Sneaker Index</div><div class="sb">Grails, tokenized</div></div></div><div class="rt"><div class="vv">$360</div><div class="dn" style="font-size:11.5px;">-2.0%</div></div></div>
+        <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--t-cobalt);color:var(--cobalt)">▤</div><div><div class="nm">Film Slate</div><div class="sb">Indie production shares</div></div></div><div class="rt"><div class="vv">$360</div><div class="up" style="font-size:11.5px;">+5.0%</div></div></div>
+        <button class="btn cob" onclick="toast('Browse the full asset catalog')">Browse assets</button>
+      </section>
+
+      <!-- ===== Karma: The Circle ===== -->
+      <section class="screen" id="circle">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>The Circle</h2></div>
+        <span class="eyebrow eb-clay">You spend, we give · together</span>
+        <div class="hero clay"><span class="lab">Given this month</span><div class="big">248,000</div><div class="note">Karma to community causes · from 12,400 members</div></div>
+        <div class="stat2">
+          <div class="stat"><div class="k">Your share</div><div class="v">1,240</div><div class="t up">Karma added</div></div>
+          <div class="stat"><div class="k">Causes funded</div><div class="v">38</div><div class="t">this month</div></div>
+        </div>
+        <div class="rowhdr"><h3>Funded by The Circle</h3></div>
+        <div class="cause"><div class="ci" style="background:var(--t-jade)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2"><path d="M12 3l7 5v11H5V8z"/></svg></div><div class="cinfo"><div class="cn">First AME Church</div><div class="cs">Roof repair · fully funded</div></div><span class="up" style="font-size:12px;">100%</span></div>
+        <div class="cause"><div class="ci" style="background:var(--t-amber)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M3 9l9-5 9 5-9 5z"/></svg></div><div class="cinfo"><div class="cn">Youth Scholarships</div><div class="cs">12 students · this term</div></div><span class="up" style="font-size:12px;">82%</span></div>
+        <div class="cause"><div class="ci" style="background:var(--t-clay)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="2"><rect x="4" y="8" width="16" height="12" rx="2"/></svg></div><div class="cinfo"><div class="cn">Neighborhood Food Drive</div><div class="cs">1,800 meals · matched</div></div><span class="up" style="font-size:12px;">64%</span></div>
+        <button class="btn" onclick="toast('How The Circle works')">See how it works</button>
+      </section>
+
+      <!-- ===== The Map: Tonight ===== -->
+      <section class="screen" id="map-tonight">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Tonight</h2></div>
+        <span class="eyebrow eb-cobalt">Concierge · In your scene</span>
+        <div class="eventcard" style="background:var(--grad);"><span class="etag">IN YOUR SCENE</span><div class="et">Rooftop set · Arts District</div><div class="ed">9:00 PM · live sets, your crowd</div></div>
+        <div class="eventcard" style="background:var(--grad-clay);"><span class="etag">8 SEATS LEFT</span><div class="et">Chef's counter · Mirame</div><div class="ed">8:00 PM · held if you want it</div></div>
+        <div class="eventcard" style="background:var(--grad-jade);"><span class="etag">INVITE ONLY</span><div class="et">After-hours · The Loft</div><div class="ed">11:00 PM · your circle is going</div></div>
+        <div class="kaimsg" style="margin-top:16px;"><span class="kk">K</span><p>I can hold the chef's counter and time a ride from your 8pm dinner. Want me to line it up?</p></div>
+        <button class="btn cob" onclick="go('schedule')">Ask KAI to plan it</button>
+      </section>
+
+      <!-- ===== Creator: Audience ===== -->
+      <section class="screen" id="cr-audience">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Audience</h2></div>
+        <span class="eyebrow eb-clay">Who follows you, and how to reach them</span>
+        <div class="hero clay"><span class="lab">Total audience</span><div class="big">12,480</div><div class="note">+320 this week</div></div>
+        <div class="stat2">
+          <div class="stat"><div class="k">Superfans</div><div class="v">840</div><div class="t up">+6%</div></div>
+          <div class="stat"><div class="k">Open rate</div><div class="v">61%</div><div class="t up">above avg</div></div>
+          <div class="stat"><div class="k">Top city</div><div class="v" style="font-size:16px;">Los Angeles</div><div class="t">2,900 fans</div></div>
+          <div class="stat"><div class="k">New this month</div><div class="v">1,240</div><div class="t up">+11%</div></div>
+        </div>
+        <button class="btn" onclick="toast('Compose a broadcast to 12,480')">Reach your audience</button>
+      </section>
+
+      <!-- ===== Creator: Rooms ===== -->
+      <section class="screen" id="cr-rooms">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Rooms</h2></div>
+        <span class="eyebrow eb-clay">Your spaces to gather, host, and go live</span>
+        <div class="rowval"><div class="l"><div class="ic" style="background:#ffe1e1;color:#C0392B">●</div><div><div class="nm">The Studio</div><div class="sb">340 in room now</div></div></div><span class="dn" style="font-size:11px;font-weight:800;">LIVE</span></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-cobalt);color:var(--cobalt)">◷</div><div><div class="nm">Sunday Service</div><div class="sb">Scheduled · Sun 11:00 AM</div></div></div><span style="font-size:11px;font-weight:800;color:var(--grey)">Soon</span></div>
+        <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--t-jade);color:var(--jade)">♥</div><div><div class="nm">Close Friends</div><div class="sb">12 online</div></div></div><span class="up" style="font-size:11px;">Open</span></div>
+        <button class="btn" onclick="toast('Start a new room')">Open a room</button>
+      </section>
+
+      <!-- ===== Creator: Revenue ===== -->
+      <section class="screen" id="cr-revenue">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Revenue</h2></div>
+        <span class="eyebrow eb-clay">What you earn, in one clear place</span>
+        <div class="hero clay"><span class="lab">This month</span><div class="big">$18,240</div><div class="note">+14% vs last month</div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-clay);color:var(--clay)">◆</div><div><div class="nm">Drops</div><div class="sb">Vinyl reissue, tees</div></div></div><div class="vv">$9,200</div></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-jade);color:var(--jade)">♥</div><div><div class="nm">Tips</div><div class="sb">From rooms and posts</div></div></div><div class="vv">$3,100</div></div>
+        <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--t-cobalt);color:var(--cobalt)">↻</div><div><div class="nm">Subscriptions</div><div class="sb">418 members</div></div></div><div class="vv">$5,940</div></div>
+        <button class="btn" onclick="go('wallet')">Cash out to INCard</button>
+      </section>
+
+      <!-- ===== Creator: Drops ===== -->
+      <section class="screen" id="cr-drops">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Drops</h2></div>
+        <span class="eyebrow eb-clay">Launch products, tickets, and content</span>
+        <div class="rowval"><div class="l"><div class="ic" style="background:#ffe1e1;color:#C0392B">●</div><div><div class="nm">Vinyl reissue</div><div class="sb">Live · 240 of 500 sold</div></div></div><span class="dn" style="font-size:11px;font-weight:800;">LIVE</span></div>
+        <div class="rowval"><div class="l"><div class="ic" style="background:var(--t-cobalt);color:var(--cobalt)">◷</div><div><div class="nm">Tee capsule</div><div class="sb">Scheduled · Friday 12pm</div></div></div><span style="font-size:11px;font-weight:800;color:var(--grey)">Queued</span></div>
+        <div class="rowval" style="border:none;"><div class="l"><div class="ic" style="background:var(--soft);color:var(--grey)">✎</div><div><div class="nm">New track</div><div class="sb">Draft · not scheduled</div></div></div><span style="font-size:11px;font-weight:800;color:var(--grey)">Draft</span></div>
+        <button class="btn" onclick="toast('Set up a new drop')">New drop</button>
+      </section>
+
+      <!-- ===== Creator: Insights ===== -->
+      <section class="screen" id="cr-insights">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Insights</h2></div>
+        <span class="eyebrow eb-clay">What is working, and what to do next</span>
+        <div class="stat2">
+          <div class="stat"><div class="k">Reach</div><div class="v">84.2k</div><div class="t up">+14%</div></div>
+          <div class="stat"><div class="k">Saves</div><div class="v">3,410</div><div class="t up">+22%</div></div>
+          <div class="stat"><div class="k">Best time</div><div class="v" style="font-size:16px;">7–9 PM</div><div class="t">your crowd is on</div></div>
+          <div class="stat"><div class="k">Top format</div><div class="v" style="font-size:16px;">Live sets</div><div class="t">2.3x engagement</div></div>
+        </div>
+        <div class="kaimsg" style="margin-top:16px;"><span class="kk">K</span><p>Post the studio clip tonight at 7:40, and open a room after. That mirrors your best week.</p></div>
+        <button class="btn" onclick="go('cr-askkai')">Ask KAI what to do next</button>
+      </section>
+
+      <!-- ===== Creator: Ask KAI (co-pilot) ===== -->
+      <section class="screen" id="cr-askkai">
+        <div class="scrhd"><div class="back" onclick="back()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></div><h2>Ask KAI</h2></div>
+        <div class="greet">
+          <div class="orb"><div class="eq"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div><h3>Business mode.</h3><p>Your co-pilot for the creator side. Pricing, launches, reach.</p></div>
+        </div>
+        <div class="bubble ka">Your audience is up 320 this week and live sets are your best format. Want me to plan a drop around them?</div>
+        <div class="lbl2">Try these</div>
+        <div class="trychips">
+          <span class="trychip" onclick="go('cr-drops')">Plan a launch</span>
+          <span class="trychip" onclick="go('cr-revenue')">Price my drop</span>
+          <span class="trychip" onclick="go('cr-audience')">Who should I reach?</span>
+          <span class="trychip" onclick="go('cr-insights')">Best time to post</span>
+        </div>
+      </section>
+
     </div><!-- /screens -->
 
     <!-- ===== bottom nav ===== -->
@@ -767,9 +1048,11 @@ body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:radi
 <div class="foot">INDIGGI International Holdings · <b>Culture is the new technology</b></div>
 
 <script>
-var tabFor={kai:'kai','r-savings':'kai','r-gift':'kai',creator:'kai',wallet:'money',rewards:'karma',giving:'karma',schedule:'schedule'};
+var tabFor={kai:'kai','r-savings':'kai','r-gift':'kai',creator:'kai',wallet:'money',rewards:'karma',giving:'karma',schedule:'schedule',
+  'qm-cancel':'kai','qm-split':'kai','qm-remind':'kai','qm-crypto':'kai','qm-tip':'kai','qm-all':'kai',
+  'mv-move':'money','mv-freeze':'money','mv-pay':'money','frac':'money','circle':'karma'};
 var chromeless={'ob-intro':1,'ob-name':1,'ob-scene':1,'ob-taste':1,'ob-verify':1,'ob-review':1,'ob-done':1};
-var cur='kai', stack=[];
+var cur='ob-intro', stack=[];
 function go(id,noPush){
   var el=document.getElementById(id); if(!el){id='kai';el=document.getElementById('kai');}
   if(!noPush && cur && cur!==id) stack.push(cur);
@@ -788,6 +1071,9 @@ function openD(){document.getElementById('drawer').classList.add('open');documen
 function closeD(){document.getElementById('drawer').classList.remove('open');document.getElementById('scrim').classList.remove('show');}
 var tT;function toast(m){var t=document.getElementById('toast');t.innerHTML=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){t.classList.remove('show');},2100);}
 function pickTier(el,name){document.querySelectorAll('.tier').forEach(function(l){l.classList.remove('on');});el.classList.add('on');}
-(function(){var h=(location.hash||'').replace('#','');if(h&&document.getElementById(h))go(h,true);})();
+function askDay(){var c=document.getElementById('kai-convo');c.style.display='block';c.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function pickAmt(el){var p=el.parentNode;p.querySelectorAll('.amt-chip').forEach(function(a){a.classList.remove('on');});el.classList.add('on');}
+function pickSel(el){var p=el.parentNode;p.querySelectorAll('.selrow').forEach(function(a){a.classList.remove('on');});el.classList.add('on');}
+(function(){var h=(location.hash||'').replace('#','');if(h&&document.getElementById(h)){go(h,true);}else{go('ob-intro',true);}})();
 </script>
 </body></html>
